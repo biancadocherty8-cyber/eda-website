@@ -569,6 +569,45 @@ section {
 .date-card-cta::after { content: '→'; }
 .date-card:hover .date-card-cta { gap: 12px; color: var(--gold); }
 
+/* Two-tier cohort list */
+.cohort-tier-label{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 18px;}
+.cohort-banners{display:flex;flex-direction:column;gap:16px;margin-bottom:56px;}
+.cohort-banner{display:flex;align-items:stretch;background:var(--bone);border:1px solid var(--rule-dark);border-radius:8px;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.cohort-banner:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(10,25,50,.1);border-color:var(--gold-soft);}
+.cohort-banner-img{position:relative;width:230px;min-width:230px;height:124px;flex-shrink:0;overflow:hidden;background:var(--navy);}
+.cohort-banner-body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:18px 30px;}
+.cohort-banner-name{font-size:21px;font-weight:700;letter-spacing:-.015em;color:var(--ink);line-height:1.2;}
+.cohort-banner-meta{font-size:15px;color:var(--ink-soft);font-weight:500;line-height:1.4;}
+.cohort-banner-meta strong{color:var(--ink);font-weight:700;}
+.cohort-banner-right{display:flex;align-items:center;gap:18px;padding:18px 30px 18px 0;flex-shrink:0;}
+
+.cohort-list{display:flex;flex-direction:column;margin-bottom:8px;}
+.cohort-row{display:flex;align-items:center;gap:24px;padding:22px 6px;border-top:1px solid var(--rule-dark);}
+.cohort-row:last-child{border-bottom:1px solid var(--rule-dark);}
+.cohort-row-name{flex:0 0 30%;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.25;}
+.cohort-row-meta{flex:1;font-size:15px;color:var(--ink-soft);font-weight:500;}
+.cohort-row-meta strong{color:var(--ink);font-weight:700;}
+.cohort-row-right{display:flex;align-items:center;gap:20px;flex-shrink:0;}
+.cohort-row-status{width:124px;display:flex;justify-content:flex-end;}
+
+.cohort-pill{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:7px 14px;border-radius:999px;white-space:nowrap;}
+.pill-fast{background:rgba(194,57,63,.12);color:#C2393F;}
+.pill-open{background:rgba(10,25,50,.07);color:var(--ink-soft);}
+.pill-wait{background:rgba(176,141,87,.18);color:#94733b;}
+.cohort-btn{font-size:13.5px;font-weight:700;color:var(--ink);border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:11px 26px;white-space:nowrap;text-decoration:none;transition:background .2s,color .2s,border-color .2s;display:inline-block;}
+.cohort-btn:hover,.cohort-banner:hover .cohort-btn{background:var(--navy);color:var(--gold);border-color:var(--navy);}
+
+@media(max-width:860px){
+  .cohort-banner{flex-direction:column;}
+  .cohort-banner-img{width:100%;min-width:0;height:180px;}
+  .cohort-banner-body{padding:18px 22px 2px;}
+  .cohort-banner-right{padding:14px 22px 20px;justify-content:space-between;width:100%;}
+  .cohort-row{flex-direction:column;align-items:flex-start;gap:10px;}
+  .cohort-row-name,.cohort-row-meta{flex:none;width:100%;}
+  .cohort-row-right{width:100%;justify-content:space-between;gap:12px;}
+  .cohort-row-status{width:auto;}
+}
+
 .all-link {
   font-size: 14px;
   font-weight: 700;
@@ -1380,16 +1419,16 @@ footer {
 <!-- URGENCY STRIP -->
 <div class="urgency-strip">
   <div class="urgency-track">
-    <span>Composite Veneers <strong>· Melbourne 23-24 May</strong><span class="selling-fast">Almost full</span></span>
     <span>Aesthetic Rehab <strong>· Sydney 13-14 June</strong><span class="selling-fast">Almost full</span></span>
-    <span>Porcelain Veneers <strong>· Melbourne 11-12 July</strong><span class="selling-fast">Selling fast</span></span>
-    <span>Aesthetic Rehab <strong>· Melbourne 22-23 Aug</strong></span>
-    <span>Composite Veneers <strong>· Sydney 26-27 Sept</strong><span class="selling-fast">Selling fast</span></span>
-    <span>Composite Veneers <strong>· Melbourne 23-24 May</strong><span class="selling-fast">Almost full</span></span>
+    <span>Porcelain Veneers <strong>· Melbourne 11-12 July</strong><span class="selling-fast">Almost full</span></span>
+    <span>Porcelain Veneers <strong>· Sydney 1-2 Aug</strong></span>
+    <span>Aesthetic Rehab <strong>· Melbourne 22-23 Aug</strong><span class="selling-fast">Selling fast</span></span>
+    <span>Composite Veneers <strong>· Sydney 26-27 Sept</strong><span class="selling-fast">Almost full</span></span>
     <span>Aesthetic Rehab <strong>· Sydney 13-14 June</strong><span class="selling-fast">Almost full</span></span>
-    <span>Porcelain Veneers <strong>· Melbourne 11-12 July</strong><span class="selling-fast">Selling fast</span></span>
-    <span>Aesthetic Rehab <strong>· Melbourne 22-23 Aug</strong></span>
-    <span>Composite Veneers <strong>· Sydney 26-27 Sept</strong><span class="selling-fast">Selling fast</span></span>
+    <span>Porcelain Veneers <strong>· Melbourne 11-12 July</strong><span class="selling-fast">Almost full</span></span>
+    <span>Porcelain Veneers <strong>· Sydney 1-2 Aug</strong></span>
+    <span>Aesthetic Rehab <strong>· Melbourne 22-23 Aug</strong><span class="selling-fast">Selling fast</span></span>
+    <span>Composite Veneers <strong>· Sydney 26-27 Sept</strong><span class="selling-fast">Almost full</span></span>
   </div>
 </div>
 
@@ -1418,135 +1457,103 @@ footer {
     </div>
     <p class="section-lede" style="margin-top:-32px;margin-bottom:48px">2026 cohorts now running in Sydney, Melbourne, Hobart, Perth and Brisbane. Seats are limited and several dates are already filling.</p>
 
-    <div class="dates-grid">
-      <a href="https://www.eventbrite.com.au/e/advanced-aesthetic-rehabilitation-aar-sydney-tickets-1978790665147" id="eb-trigger-1" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-fast">Almost full</span>
-          <image-slot id="date-img-2" placeholder="Sydney AAR case photo" src="assets/date-img-2-kam-mentoring.jpg"><img loading="lazy" decoding="async" src="assets/date-img-2-kam-mentoring.jpg" alt="Dr. Kam chairside mentoring an attendee" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;"></image-slot>
-          <span class="date-card-city">Sydney · Chatswood</span>
+    <!-- NEXT UP -->
+    <div class="cohort-tier-label">Next up</div>
+    <div class="cohort-banners">
+      <a href="https://www.eventbrite.com.au/e/advanced-aesthetic-rehabilitation-aar-sydney-tickets-1978790665147" id="eb-trigger-1" target="_blank" class="cohort-banner">
+        <div class="cohort-banner-img"><image-slot id="date-img-2" placeholder="Sydney AAR case photo" src="assets/date-img-2-kam-mentoring.jpg"><img loading="lazy" decoding="async" src="assets/date-img-2-kam-mentoring.jpg" alt="Dr. Kam chairside mentoring an attendee" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;"></image-slot></div>
+        <div class="cohort-banner-body">
+          <div class="cohort-banner-name">Advanced Aesthetic Rehabilitation</div>
+          <div class="cohort-banner-meta"><strong>Sat 13 &amp; Sun 14 June 2026</strong> · Sydney · Chatswood · 9am to 5pm</div>
         </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Advanced Aesthetic Rehabilitation</div>
-          <div class="date-card-when"><strong>Sat 13 &amp; Sun 14 June 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
+        <div class="cohort-banner-right">
+          <span class="cohort-pill pill-fast">Almost full</span>
+          <span class="cohort-btn">Book seat</span>
         </div>
       </a>
+      <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-melbourne-tickets-1984586207771" id="eb-trigger-2" target="_blank" class="cohort-banner">
+        <div class="cohort-banner-img"><image-slot id="date-img-3" placeholder="Porcelain veneer case photo" src="assets/date-img-3-faculty-lecture.jpg"><img loading="lazy" decoding="async" src="assets/date-img-3-faculty-lecture.jpg" alt="Faculty member presenting during a masterclass lecture" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block;"></image-slot></div>
+        <div class="cohort-banner-body">
+          <div class="cohort-banner-name">Exceptional Porcelain Veneers</div>
+          <div class="cohort-banner-meta"><strong>Sat 11 &amp; Sun 12 July 2026</strong> · Melbourne · 9am to 5pm</div>
+        </div>
+        <div class="cohort-banner-right">
+          <span class="cohort-pill pill-fast">Almost full</span>
+          <span class="cohort-btn">Book seat</span>
+        </div>
+      </a>
+      <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-sydney-tickets-1990365162781" id="eb-trigger-3" target="_blank" class="cohort-banner">
+        <div class="cohort-banner-img"><image-slot id="date-img-7" placeholder="Sydney EPV photo" src="assets/date-img-7-epv-sydney.jpg"><img loading="lazy" decoding="async" src="assets/date-img-7-epv-sydney.jpg" alt="Porcelain veneer case" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot></div>
+        <div class="cohort-banner-body">
+          <div class="cohort-banner-name">Exceptional Porcelain Veneers</div>
+          <div class="cohort-banner-meta"><strong>Sat 1 &amp; Sun 2 August 2026</strong> · Sydney · 9am to 5pm</div>
+        </div>
+        <div class="cohort-banner-right">
+          <span class="cohort-pill pill-open">Open</span>
+          <span class="cohort-btn">Book seat</span>
+        </div>
+      </a>
+    </div>
 
-      <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-melbourne-tickets-1984586207771" id="eb-trigger-2" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-fast">Almost full</span>
-          <image-slot id="date-img-3" placeholder="Porcelain veneer case photo" src="assets/date-img-3-faculty-lecture.jpg"><img loading="lazy" decoding="async" src="assets/date-img-3-faculty-lecture.jpg" alt="Faculty member presenting during a masterclass lecture" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block;"></image-slot>
-          <span class="date-card-city">Melbourne</span>
+    <!-- LATER IN 2026 -->
+    <div class="cohort-tier-label">Later in 2026</div>
+    <div class="cohort-list">
+      <div class="cohort-row">
+        <div class="cohort-row-name">Advanced Aesthetic Rehabilitation</div>
+        <div class="cohort-row-meta"><strong>Sat 22 &amp; Sun 23 August</strong> · Melbourne</div>
+        <div class="cohort-row-right">
+          <span class="cohort-row-status"><span class="cohort-pill pill-fast">Selling fast</span></span>
+          <a href="https://www.eventbrite.com.au/e/advanced-aesthetic-rehabilitation-aar-melbourne-tickets-1984586580887" id="eb-trigger-4" target="_blank" class="cohort-btn">Book seat</a>
         </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Exceptional Porcelain Veneers</div>
-          <div class="date-card-when"><strong>Sat 11 &amp; Sun 12 July 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
+      </div>
+      <div class="cohort-row">
+        <div class="cohort-row-name">Composite Veneer Masterclass</div>
+        <div class="cohort-row-meta"><strong>Sat 26 &amp; Sun 27 September</strong> · Sydney</div>
+        <div class="cohort-row-right">
+          <span class="cohort-row-status"><span class="cohort-pill pill-fast">Almost full</span></span>
+          <a href="https://www.eventbrite.com.au/e/composite-veneer-masterclass-sydney-tickets-1984586428431" id="eb-trigger-5" target="_blank" class="cohort-btn">Book seat</a>
         </div>
-      </a>
-
-      <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-sydney-tickets-1990365162781" id="eb-trigger-3" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-open">Open</span>
-          <image-slot id="date-img-7" placeholder="Sydney EPV photo" src="assets/date-img-7-epv-sydney.jpg"><img loading="lazy" decoding="async" src="assets/date-img-7-epv-sydney.jpg" alt="Porcelain veneer case" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot>
-          <span class="date-card-city">Sydney</span>
+      </div>
+      <div class="cohort-row">
+        <div class="cohort-row-name">Composite Veneer Masterclass</div>
+        <div class="cohort-row-meta"><strong>Sat 3 &amp; Sun 4 October</strong> · Melbourne</div>
+        <div class="cohort-row-right">
+          <span class="cohort-row-status"><span class="cohort-pill pill-open">Open</span></span>
+          <a href="https://www.eventbrite.com.au/e/composite-veneer-masterclass-melbourne-tickets-1990952224699" id="eb-trigger-9" target="_blank" class="cohort-btn">Book seat</a>
         </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Exceptional Porcelain Veneers</div>
-          <div class="date-card-when"><strong>Sat 1 &amp; Sun 2 August 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
+      </div>
+      <div class="cohort-row">
+        <div class="cohort-row-name">Exceptional Porcelain Veneers</div>
+        <div class="cohort-row-meta"><strong>Sat 17 &amp; Sun 18 October</strong> · Hobart, Tasmania</div>
+        <div class="cohort-row-right">
+          <span class="cohort-row-status"><span class="cohort-pill pill-open">Open</span></span>
+          <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-hobart-tasmania-tickets-1990366303192" id="eb-trigger-6" target="_blank" class="cohort-btn">Book seat</a>
         </div>
-      </a>
-
-      <a href="https://www.eventbrite.com.au/e/advanced-aesthetic-rehabilitation-aar-melbourne-tickets-1984586580887" id="eb-trigger-4" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-fast">Selling fast</span>
-          <image-slot id="date-img-4" placeholder="Melbourne AAR cohort photo" src="assets/date-img-4-retracted-full-arch.jpg"><img loading="lazy" decoding="async" src="assets/date-img-4-retracted-full-arch.jpg" alt="Retracted intraoral view, finished full-arch case" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot>
-          <span class="date-card-city">Melbourne</span>
+      </div>
+      <div class="cohort-row">
+        <div class="cohort-row-name">Exceptional Porcelain Veneers</div>
+        <div class="cohort-row-meta"><strong>Sat 24 &amp; Sun 25 October</strong> · Perth</div>
+        <div class="cohort-row-right">
+          <span class="cohort-row-status"><span class="cohort-pill pill-open">Open</span></span>
+          <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-perth-tickets-1990366652236" id="eb-trigger-7" target="_blank" class="cohort-btn">Book seat</a>
         </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Advanced Aesthetic Rehabilitation</div>
-          <div class="date-card-when"><strong>Sat 22 &amp; Sun 23 August 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
+      </div>
+      <div class="cohort-row">
+        <div class="cohort-row-name">Exceptional Porcelain Veneers</div>
+        <div class="cohort-row-meta"><strong>Sat 21 &amp; Sun 22 November</strong> · Brisbane</div>
+        <div class="cohort-row-right">
+          <span class="cohort-row-status"><span class="cohort-pill pill-open">Open</span></span>
+          <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-brisbane-tickets-1990366884932" id="eb-trigger-8" target="_blank" class="cohort-btn">Book seat</a>
         </div>
-      </a>
-
-      <a href="https://www.eventbrite.com.au/e/composite-veneer-masterclass-sydney-tickets-1984586428431" id="eb-trigger-5" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-fast">Almost full</span>
-          <image-slot id="date-img-5" placeholder="Sydney Composite Veneer cohort photo" src="assets/course-img-1-incisal-tinting.jpg"><img loading="lazy" decoding="async" src="assets/course-img-1-incisal-tinting.jpg" alt="Composite veneer layering" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot>
-          <span class="date-card-city">Sydney</span>
+      </div>
+      <div class="cohort-row">
+        <div class="cohort-row-name">Implant Masterclass</div>
+        <div class="cohort-row-meta"><strong>Coming 2026</strong> · National · Cohort dates pending</div>
+        <div class="cohort-row-right">
+          <span class="cohort-row-status"><span class="cohort-pill pill-wait">Waitlist</span></span>
+          <a href="https://manage.kmail-lists.com/subscriptions/subscribe?a=RqySRe&g=TTdjdz" target="_blank" rel="noopener" class="cohort-btn">Register interest</a>
         </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Composite Veneer Masterclass</div>
-          <div class="date-card-when"><strong>Sat 26 &amp; Sun 27 September 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
-        </div>
-      </a>
-      <a href="https://www.eventbrite.com.au/e/composite-veneer-masterclass-melbourne-tickets-1990952224699" id="eb-trigger-9" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-open">Open</span>
-          <image-slot id="date-img-5b" placeholder="Melbourne Composite Veneer cohort photo" src="assets/date-img-5-smile-after.jpg"><img loading="lazy" decoding="async" src="assets/date-img-5-smile-after.jpg" alt="Finished smile, anterior view" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot>
-          <span class="date-card-city">Melbourne</span>
-        </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Composite Veneer Masterclass</div>
-          <div class="date-card-when"><strong>Sat 3 &amp; Sun 4 October 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
-        </div>
-      </a>
-
-      <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-hobart-tasmania-tickets-1990366303192" id="eb-trigger-6" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-open">Open</span>
-          <image-slot id="date-img-8" placeholder="Hobart EPV photo" src="assets/date-img-8-epv-hobart.jpg"><img loading="lazy" decoding="async" src="assets/date-img-8-epv-hobart.jpg" alt="Porcelain veneer case" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot>
-          <span class="date-card-city">Hobart, Tasmania</span>
-        </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Exceptional Porcelain Veneers</div>
-          <div class="date-card-when"><strong>Sat 17 &amp; Sun 18 October 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
-        </div>
-      </a>
-
-      <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-perth-tickets-1990366652236" id="eb-trigger-7" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-open">Open</span>
-          <image-slot id="date-img-9" placeholder="Perth EPV photo" src="assets/date-img-9-epv-perth.jpg"><img loading="lazy" decoding="async" src="assets/date-img-9-epv-perth.jpg" alt="Porcelain veneer case" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot>
-          <span class="date-card-city">Perth</span>
-        </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Exceptional Porcelain Veneers</div>
-          <div class="date-card-when"><strong>Sat 24 &amp; Sun 25 October 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
-        </div>
-      </a>
-
-      <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-brisbane-tickets-1990366884932" id="eb-trigger-8" target="_blank" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-open">Open</span>
-          <image-slot id="date-img-10" placeholder="Brisbane EPV photo" src="assets/date-img-10-epv-brisbane.jpg"><img loading="lazy" decoding="async" src="assets/date-img-10-epv-brisbane.jpg" alt="Porcelain veneer case" style="width:100%;height:100%;object-fit:cover;display:block;"></image-slot>
-          <span class="date-card-city">Brisbane</span>
-        </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Exceptional Porcelain Veneers</div>
-          <div class="date-card-when"><strong>Sat 21 &amp; Sun 22 November 2026</strong> · 9am to 5pm · 2 days hands-on</div>
-          <span class="date-card-cta">Book seat</span>
-        </div>
-      </a>
-
-      <a href="https://manage.kmail-lists.com/subscriptions/subscribe?a=RqySRe&g=TTdjdz" target="_blank" rel="noopener" class="date-card">
-        <div class="date-card-img">
-          <span class="date-card-badge badge-tba">Waitlist</span>
-          <image-slot id="date-img-6" placeholder="EDA logo" src="assets/eda-logo-lockup.jpg"><img loading="lazy" decoding="async" src="assets/eda-logo-lockup.jpg" alt="Exceptional Dental Academy logo" style="width:100%;height:100%;object-fit:contain;background:#F1ECE0;display:block;"></image-slot>
-          <span class="date-card-city">National</span>
-        </div>
-        <div class="date-card-body">
-          <div class="date-card-title">Implant Masterclass</div>
-          <div class="date-card-when"><strong>Coming 2026</strong> · Cohort dates pending</div>
-          <span class="date-card-cta">Register interest</span>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1980,7 +1987,7 @@ footer {
 <div class="mobile-cta-bar">
   <div class="mcta-info">
     <span class="mcta-label">Next cohort</span>
-    <span class="mcta-text">Composite Veneers · <em>Melbourne 23 &amp; 24 May</em></span>
+    <span class="mcta-text">Aesthetic Rehab · <em>Sydney 13 &amp; 14 June</em></span>
   </div>
   <a href="#upcoming" class="mcta-button">Book</a>
 </div>
