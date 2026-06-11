@@ -74,13 +74,16 @@ nav, .hero, .urgency-strip, .results, .final-cta, footer, .mobile-cta-bar, .vide
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+img, image-slot, video, iframe { max-width: 100%; }
 body {
   font-family: var(--sans);
   background: var(--paper);
   color: var(--ink);
   line-height: 1.55;
   font-size: 16px;
+  overflow-x: clip;
+  max-width: 100vw;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
