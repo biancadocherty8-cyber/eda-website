@@ -1169,13 +1169,15 @@ footer {
 }
 
 /* EPV founder layout - roomier (auto) */
-.faculty-grid{grid-template-columns:1fr !important;gap:34px !important;max-width:880px;margin-left:auto;margin-right:auto;}
-.fac-card{flex-direction:row !important;gap:30px;align-items:flex-start;text-align:left;}
-.fac-portrait{flex:0 0 210px;width:210px;margin-bottom:0 !important;}
+.faculty-grid{grid-template-columns:1fr !important;gap:40px !important;max-width:900px;margin-left:auto;margin-right:auto;}
+.fac-card{display:grid !important;grid-template-columns:210px 1fr;column-gap:32px;align-items:start;text-align:left;}
+.fac-portrait{grid-column:1;grid-row:1 / span 3;margin-bottom:0 !important;}
+.fac-name,.fac-role,.fac-bio{grid-column:2;}
+.fac-role{margin-bottom:0;}
 .fac-bio{font-size:14px;line-height:1.62;color:#4a4640;margin-top:12px;}
 .fac-bio p{margin-bottom:11px;}
 .fac-bio p:last-child{margin-bottom:0;}
-@media(max-width:680px){.fac-card{flex-direction:column !important;}.fac-portrait{flex:0 0 auto;width:190px;}}
+@media(max-width:680px){.fac-card{grid-template-columns:1fr;}.fac-portrait{grid-row:auto;width:190px;}.fac-name,.fac-role,.fac-bio{grid-column:1;}}
 </style>
 <style>.aud-toggle{display:none!important}</style>
 <style>html,body{overflow-x:clip;max-width:100vw;}img,image-slot,video,iframe{max-width:100%;}</style>
