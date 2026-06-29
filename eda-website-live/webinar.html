@@ -202,13 +202,13 @@ document.addEventListener('DOMContentLoaded', async function() {
       if(err)err.classList.remove('show');
       if(!valid()){ showErr('Please add your name and a valid email.'); return; }
       card.classList.add('loading');
-      klaviyo({type:'profile',attributes:{email:email.value.trim(),first_name:fname.value.trim(),last_name:lname.value.trim(),properties:{webinar:WEBINAR}}})
+      klaviyo({email:email.value.trim(),first_name:fname.value.trim(),last_name:lname.value.trim(),properties:{webinar:WEBINAR}})
       .then(function(r){ card.classList.remove('loading'); if(r.ok||r.status===202){ if(window.fbq)fbq('track','Lead',{content_name:WEBINAR}); card.classList.add('step2'); } else showErr(); })
       .catch(function(){ card.classList.remove('loading'); showErr(); });
     });
     function finish(send){
       function done(){ card.classList.remove('step2'); card.classList.add('done'); }
-      if(send){ var yrs=(document.querySelector('input[name=yrs]:checked')||{}).value||''; klaviyo({type:'profile',attributes:{email:email.value.trim(),properties:{webinar:WEBINAR,years_since_grad:yrs,practice_name:document.getElementById('pracname').value.trim(),practice_location:document.getElementById('pracloc').value.trim(),role:document.getElementById('role').value}}}).then(done).catch(done); }
+      if(send){ var yrs=(document.querySelector('input[name=yrs]:checked')||{}).value||''; klaviyo({email:email.value.trim(),properties:{webinar:WEBINAR,years_since_grad:yrs,practice_name:document.getElementById('pracname').value.trim(),practice_location:document.getElementById('pracloc').value.trim(),role:document.getElementById('role').value}}).then(done).catch(done); }
       else done();
     }
     document.getElementById('step2Done').addEventListener('click',function(){finish(true);});
