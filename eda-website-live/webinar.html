@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       if(!valid()){ showErr('Please add your name and a valid email.'); return; }
       card.classList.add('loading');
       klaviyo({email:email.value.trim(),first_name:fname.value.trim(),last_name:lname.value.trim(),properties:{webinar:WEBINAR}})
-      .then(function(r){ card.classList.remove('loading'); if(r.ok||r.status===202){ if(window.fbq)fbq('track','Lead',{content_name:WEBINAR}); card.classList.add('step2'); } else showErr(); })
+      .then(function(r){ card.classList.remove('loading'); if(r.ok||r.status===202){ if(window.fbq){fbq('track','Lead',{content_name:WEBINAR});fbq('trackCustom','WebinarRegistration',{content_name:WEBINAR});} card.classList.add('step2'); } else showErr(); })
       .catch(function(){ card.classList.remove('loading'); showErr(); });
     });
     function finish(send){
