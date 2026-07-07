@@ -110,14 +110,30 @@ nav{position:sticky;top:0;z-index:50;background:rgba(10,25,50,0.94);backdrop-fil
 @media(max-width:600px){.modal-top,.modal-body{padding-left:22px;padding-right:22px;}}
 .m-blurb{font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:22px;}
 .gate-form .row{display:grid;gap:11px;margin-bottom:11px;}
-.gate-form input{width:100%;padding:13px 15px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--rule-dark);border-radius:6px;}
-.gate-form input:focus{outline:none;border-color:var(--navy);}
+.gate-form .row.two{grid-template-columns:1fr 1fr;}
+@media(max-width:480px){.gate-form .row.two{grid-template-columns:1fr;}}
+.gate-form input,.gate-form select{width:100%;padding:13px 15px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--rule-dark);border-radius:6px;}
+.gate-form input:focus,.gate-form select:focus{outline:none;border-color:var(--navy);}
 .gate-btn{width:100%;padding:14px 22px;border:none;border-radius:999px;background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,transform .2s;}
 .gate-btn:hover{background:var(--navy-soft);transform:translateY(-1px);}
 .gate-note{font-size:12px;color:var(--ink-faded);text-align:center;margin-top:12px;line-height:1.5;}
 .gate-err{display:none;margin-top:12px;text-align:center;font-size:13px;color:var(--red);font-weight:600;}
 .gate-err.show{display:block;}
 .modal.loading .gate-btn{opacity:.6;pointer-events:none;}
+
+/* STEP 2 */
+.s2-head{margin-bottom:18px;}
+.s2-head h3{font-weight:700;font-size:18px;letter-spacing:-0.02em;color:var(--ink);margin-bottom:5px;}
+.s2-head p{font-size:13.5px;color:var(--ink-faded);}
+.q{margin-bottom:16px;}
+.q-label{display:block;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:8px;}
+.radios{display:flex;flex-wrap:wrap;gap:8px;}
+.radios label{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink-soft);padding:8px 13px;border:1px solid var(--rule-dark);border-radius:999px;cursor:pointer;transition:border-color .2s,background .2s;}
+.radios label:hover{border-color:var(--gold);}
+.radios input{accent-color:var(--navy);}
+.skip-link{display:block;width:100%;background:none;border:none;color:var(--ink-faded);font-family:var(--sans);font-size:13px;font-weight:600;text-decoration:underline;cursor:pointer;margin-top:12px;padding:6px;}
+.skip-link:hover{color:var(--navy);}
+
 .video-wrap{position:relative;width:100%;padding-bottom:56.25%;background:var(--navy-deep);border-radius:6px;overflow:hidden;margin-bottom:6px;}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 .video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:rgba(244,236,220,0.85);padding:26px;}
@@ -220,19 +236,67 @@ footer{background:var(--navy-deep);color:rgba(244,236,220,0.6);padding:72px 32px
     </div>
     <div class="modal-body">
       <p class="m-blurb" id="mBlurb"></p>
+
+      <!-- STEP 1: name + email -->
       <form class="gate-form" id="gateForm">
-        <div class="row">
+        <div class="row two">
           <input type="text" id="gFname" placeholder="First name" autocomplete="given-name" required>
+          <input type="text" id="gLname" placeholder="Last name" autocomplete="family-name" required>
+        </div>
+        <div class="row">
           <input type="email" id="gEmail" placeholder="Email address" autocomplete="email" required>
         </div>
         <button type="submit" class="gate-btn" id="gateBtn">Watch the free class</button>
-        <div class="gate-err" id="gateErr">Please add your name and a valid email.</div>
+        <div class="gate-err" id="gateErr">Please add your full name and a valid email.</div>
         <p class="gate-note" id="gateNote">We'll email you the link too, so you can come back any time. No spam, unsubscribe whenever.</p>
       </form>
+
+      <!-- STEP 2: profiling questions -->
+      <form class="gate-form" id="step2Form" hidden>
+        <div class="s2-head">
+          <h3>Tell us a bit about you</h3>
+          <p>Optional. It helps us tailor what we send you.</p>
+        </div>
+        <div class="q">
+          <span class="q-label">Years since graduating</span>
+          <div class="radios">
+            <label><input type="radio" name="yrs" value="Currently studying"> Studying</label>
+            <label><input type="radio" name="yrs" value="0-2 years"> 0 to 2</label>
+            <label><input type="radio" name="yrs" value="3-5 years"> 3 to 5</label>
+            <label><input type="radio" name="yrs" value="6-10 years"> 6 to 10</label>
+            <label><input type="radio" name="yrs" value="10+ years"> 10+</label>
+          </div>
+        </div>
+        <div class="q">
+          <label class="q-label" for="s2Role">Your role</label>
+          <select id="s2Role">
+            <option value="">Select one</option>
+            <option value="Principal / practice owner">Principal / practice owner</option>
+            <option value="Associate dentist">Associate dentist</option>
+            <option value="Dental student">Dental student</option>
+            <option value="Practice manager">Practice manager</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="q">
+          <label class="q-label" for="s2Prac">Practice name</label>
+          <input type="text" id="s2Prac" placeholder="Practice name" autocomplete="organization">
+        </div>
+        <div class="q">
+          <label class="q-label" for="s2Loc">Practice location</label>
+          <input type="text" id="s2Loc" placeholder="Suburb and state" autocomplete="address-level2">
+        </div>
+        <button type="submit" class="gate-btn" id="step2Btn">Finish and watch</button>
+        <button type="button" class="skip-link" id="skipStep2">Skip for now</button>
+      </form>
+
+      <!-- RESULT: recorded video -->
       <div id="resultVideo" hidden>
         <div class="video-wrap" id="videoWrap"></div>
         <p class="gate-note">We've also emailed you the link so you can watch again later.</p>
       </div>
+
+      <!-- RESULT: live / upcoming confirmation -->
       <div id="resultConfirm" hidden>
         <div class="confirm">
           <div class="tick">&#10003;</div>
@@ -312,8 +376,10 @@ document.querySelectorAll('.filter').forEach(function(b){
 var mBadge=document.getElementById('mBadge'), mTitle=document.getElementById('mTitle'),
     mPres=document.getElementById('mPresenters'), mBlurb=document.getElementById('mBlurb'),
     form=document.getElementById('gateForm'), fname=document.getElementById('gFname'),
-    email=document.getElementById('gEmail'), err=document.getElementById('gateErr'),
-    gateBtn=document.getElementById('gateBtn'), gateNote=document.getElementById('gateNote'),
+    lname=document.getElementById('gLname'), email=document.getElementById('gEmail'),
+    err=document.getElementById('gateErr'), gateBtn=document.getElementById('gateBtn'),
+    step2=document.getElementById('step2Form'), step2Btn=document.getElementById('step2Btn'),
+    s2Role=document.getElementById('s2Role'), s2Prac=document.getElementById('s2Prac'), s2Loc=document.getElementById('s2Loc'),
     resultVideo=document.getElementById('resultVideo'), resultConfirm=document.getElementById('resultConfirm'),
     videoWrap=document.getElementById('videoWrap'), confirmH=document.getElementById('confirmH'),
     confirmP=document.getElementById('confirmP');
@@ -327,11 +393,13 @@ function openModal(w){
   mBlurb.textContent=w.blurb + (w.mode==='live'&&w.dateLabel?(' Live on '+w.dateLabel+'.'):'');
   err.classList.remove('show'); modal.classList.remove('loading');
   resultVideo.setAttribute('hidden',''); resultConfirm.setAttribute('hidden','');
-  videoWrap.innerHTML=''; form.reset();
+  step2.setAttribute('hidden',''); videoWrap.innerHTML='';
+  form.reset(); step2.reset();
   gateBtn.textContent = w.mode==='recorded'?'Watch the free class':(w.mode==='live'?'Register free':'Notify me when it opens');
+  step2Btn.textContent = w.mode==='recorded'?'Finish and watch':'Finish';
   form.removeAttribute('hidden');
   var unlocked=false; try{ unlocked = localStorage.getItem('eda_lib_'+w.id)==='1'; }catch(e){}
-  if(unlocked){ showResult(w); }
+  if(unlocked){ form.setAttribute('hidden',''); showResult(w); }
   overlay.classList.add('open'); document.body.style.overflow='hidden';
   modal.scrollTop=0;
 }
@@ -341,7 +409,7 @@ overlay.addEventListener('click',function(e){ if(e.target===overlay) closeModal(
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
 
 function showResult(w){
-  form.setAttribute('hidden','');
+  step2.setAttribute('hidden','');
   if(w.mode==='recorded'){
     resultVideo.removeAttribute('hidden');
     if(w.videoUrl){
@@ -357,34 +425,53 @@ function showResult(w){
     if(w.mode==='live'){ confirmH.textContent="You're registered"; confirmP.textContent='We will email your join link before we go live'+(w.dateLabel?(' on '+w.dateLabel):'')+'. Keep an eye on your inbox.'; }
     else { confirmH.textContent="You're on the list"; confirmP.textContent='We will email you as soon as this class opens. Nothing else to do for now.'; }
   }
+  modal.scrollTop=0;
 }
 
 function validEmail(){ return /.+@.+\..+/.test(email.value.trim()); }
-function klaviyo(w){
+
+/* Klaviyo client subscription. extra = additional profile properties (step 2). */
+function klaviyo(w, extra){
+  var props = { webinar:w.title, lead_source:w.source };
+  if(extra){ for(var k in extra){ if(extra[k]) props[k]=extra[k]; } }
   var payload={data:{type:'subscription',attributes:{profile:{data:{type:'profile',attributes:{
-    email:email.value.trim(), first_name:fname.value.trim(),
-    properties:{ webinar:w.title, lead_source:w.source }
+    email:email.value.trim(), first_name:fname.value.trim(), last_name:lname.value.trim(),
+    properties:props
   }}}},relationships:{list:{data:{type:'list',id:w.listId}}}}};
   return fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+encodeURIComponent(KLAVIYO_COMPANY_ID),{
     method:'POST', headers:{'Content-Type':'application/json','revision':'2024-10-15'}, body:JSON.stringify(payload)
   });
 }
 
+/* STEP 1 - capture the person, then show step 2 */
 form.addEventListener('submit',function(e){
   e.preventDefault();
   err.classList.remove('show');
-  if(!fname.value.trim()||!validEmail()){ err.classList.add('show'); return; }
+  if(!fname.value.trim()||!lname.value.trim()||!validEmail()){ err.classList.add('show'); return; }
   var w=current; modal.classList.add('loading');
   klaviyo(w).then(function(r){
     modal.classList.remove('loading');
     if(r.ok||r.status===202){
       if(window.fbq){ fbq('track','Lead',{content_name:w.title}); fbq('trackCustom','WebinarRegistration',{content_name:w.title}); }
       try{ localStorage.setItem('eda_lib_'+w.id,'1'); }catch(e2){}
-      showResult(w);
+      form.setAttribute('hidden','');
+      step2.removeAttribute('hidden');
       modal.scrollTop=0;
     } else { err.textContent='Something went wrong. Please try again.'; err.classList.add('show'); }
   }).catch(function(){ modal.classList.remove('loading'); err.textContent='Something went wrong. Please try again.'; err.classList.add('show'); });
 });
+
+/* STEP 2 - enrich the profile, then reveal content */
+step2.addEventListener('submit',function(e){
+  e.preventDefault();
+  var w=current;
+  var yrs=(document.querySelector('input[name=yrs]:checked')||{}).value||'';
+  var extra={ years_since_grad:yrs, role:s2Role.value, practice_name:s2Prac.value.trim(), practice_location:s2Loc.value.trim() };
+  modal.classList.add('loading');
+  klaviyo(w, extra).then(function(){ modal.classList.remove('loading'); showResult(w); })
+                   .catch(function(){ modal.classList.remove('loading'); showResult(w); });
+});
+document.getElementById('skipStep2').addEventListener('click',function(){ showResult(current); });
 
 render('all');
 </script>
