@@ -77,6 +77,31 @@ nav{position:sticky;top:0;z-index:50;background:rgba(10,25,50,0.94);backdrop-fil
 .btn-ghost:hover{background:var(--navy);color:var(--cream);}
 @media(max-width:600px){.stage{padding:32px 16px 60px;}}
 
+/* COURSES */
+.courses{padding:4px 32px 84px;}
+.courses-inner{max-width:760px;margin:0 auto;text-align:center;}
+.courses-eyebrow{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
+.courses-h{font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-0.03em;color:var(--ink);margin-bottom:12px;}
+.courses-h em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--gold);}
+.courses-lede{font-size:16px;color:var(--ink-soft);line-height:1.6;max-width:580px;margin:0 auto 34px;}
+.course-card{background:#fff;border:1px solid var(--rule-dark);border-radius:10px;box-shadow:0 24px 54px rgba(10,25,50,0.08);overflow:hidden;text-align:left;}
+.course-card-top{background:var(--navy);color:var(--cream);padding:26px 30px 24px;}
+.course-tag{font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:10px;}
+.course-card-top h3{font-weight:700;font-size:22px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:8px;}
+.course-card-top h3 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--gold);}
+.course-card-top p{font-size:14.5px;color:rgba(244,236,220,0.82);line-height:1.55;}
+.course-dates{display:flex;flex-wrap:wrap;gap:8px;padding:22px 30px 4px;}
+.date-pill{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink);padding:8px 13px;border:1px solid var(--rule-dark);border-radius:999px;transition:border-color .2s,background .2s;}
+.date-pill:hover{border-color:var(--gold);background:var(--paper);}
+.date-pill em{font-style:normal;color:var(--ink-faded);font-weight:600;}
+.course-foot{padding:20px 30px 28px;}
+.btn-gold{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-size:14px;font-weight:700;background:var(--navy);color:var(--cream);transition:background .2s,transform .2s;}
+.btn-gold:hover{background:var(--navy-soft);transform:translateY(-1px);}
+.courses-more{margin-top:24px;font-size:14px;font-weight:600;}
+.courses-more a{color:var(--navy);text-decoration:underline;}
+.courses-more a:hover{color:var(--gold);}
+@media(max-width:600px){.courses{padding:0 16px 60px;}.course-card-top,.course-dates,.course-foot{padding-left:20px;padding-right:20px;}}
+
 /* FOOTER */
 footer{background:var(--navy-deep);color:rgba(244,236,220,0.6);padding:64px 32px 34px;border-top:1px solid var(--rule);text-align:center;}
 .footer-brand{font-weight:700;font-size:17px;color:var(--cream);margin-bottom:12px;display:inline-flex;align-items:center;gap:9px;justify-content:center;}
@@ -119,9 +144,30 @@ footer{background:var(--navy-deep);color:rgba(244,236,220,0.6);padding:64px 32px
         title="How to Temporise Veneers, Step by Step"></iframe>
     </div>
     <p class="desc">A practical, chairside walkthrough of the temporisation workflow: the matrix that transfers your wax-up cleanly, material choice and placement for clean margins and healthy tissue, and the fit and finish that keeps temporaries stable until the final seat.</p>
-    <div class="after-cta">
-      <a href="webinar.html" class="btn-ghost">See all our free classes <span>&rarr;</span></a>
+  </div>
+</section>
+
+<section class="courses">
+  <div class="courses-inner">
+    <div class="courses-eyebrow">Take it further</div>
+    <h2 class="courses-h">Ready to learn this <em>hands-on?</em></h2>
+    <p class="courses-lede">Temporisation is one part of the porcelain veneer workflow we teach in full at our two-day masterclass. Small cohorts, taught by the same faculty, running Australia-wide.</p>
+    <div class="course-card">
+      <div class="course-card-top">
+        <div class="course-tag">Flagship · 2 days fully hands-on</div>
+        <h3>Exceptional Porcelain Veneers <em>(EPV)</em></h3>
+        <p>Plan, prep, temporise and seat a full veneer case start to finish, on the bench, with live feedback.</p>
+      </div>
+      <div class="course-dates">
+        <a href="porcelain-veneers.html#dates" class="date-pill">Melbourne <em>11 Jul</em></a>
+        <a href="porcelain-veneers.html#dates" class="date-pill">Sydney <em>1 Aug</em></a>
+        <a href="porcelain-veneers.html#dates" class="date-pill">Hobart <em>17 Oct</em></a>
+        <a href="porcelain-veneers.html#dates" class="date-pill">Perth <em>24 Oct</em></a>
+        <a href="porcelain-veneers.html#dates" class="date-pill">Brisbane <em>21 Nov</em></a>
+      </div>
+      <div class="course-foot"><a href="porcelain-veneers.html#dates" class="btn-gold">View dates and book <span>&rarr;</span></a></div>
     </div>
+    <div class="courses-more"><a href="index.html#upcoming">See all upcoming courses</a></div>
   </div>
 </section>
 
