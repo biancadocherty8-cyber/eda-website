@@ -2091,11 +2091,12 @@ footer {
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script>(function(){var ev=[{id:'eb-trigger-1',eid:'1978790665147',name:'AAR Sydney'},{id:'eb-trigger-2',eid:'1984586207771',name:'EPV Melbourne'},{id:'eb-trigger-3',eid:'1990365162781',name:'EPV Sydney'},{id:'eb-trigger-4',eid:'1984586580887',name:'AAR Melbourne'},{id:'eb-trigger-5',eid:'1984586428431',name:'Composite Sydney'},{id:'eb-trigger-6',eid:'1990366303192',name:'EPV Hobart'},{id:'eb-trigger-7',eid:'1990366652236',name:'EPV Perth'},{id:'eb-trigger-8',eid:'1990366884932',name:'EPV Brisbane'},{id:'eb-trigger-9',eid:'1990952224699',name:'Composite Melbourne'}];function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id,onOrderComplete:function(){if(window.fbq)fbq("track","Purchase",{content_name:e.name,content_ids:[e.eid],content_type:"product"});}});}});}go();})();</script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="eventbrite.com.au/e/"]');if(a&&window.fbq){fbq('track','InitiateCheckout');}},true);</script>
-<!-- EDA webinar sign-up pop-up (added 2026-07-01) -->
+<!-- EDA evergreen webinar pop-up (updated 2026-07-09) -->
 <script>
 (function(){
-  var KLAVIYO_COMPANY_ID='RqySRe', KLAVIYO_LIST_ID='VSWb5i';
-  var WEBINAR='How to Temporise Veneers Step by Step 7 Jul 2026';
+  var KLAVIYO_COMPANY_ID='RqySRe', KLAVIYO_LIST_ID='XPEw9U';
+  var WEBINAR='How to Temporise Veneers Step by Step (recording)';
+  var RECORDING_URL='https://www.exceptionaldentalacademy.com/temporise';
   var KEY='eda_webinar_popup', DELAY=8000, SNOOZE_DAYS=7;
   try{
     var last=localStorage.getItem(KEY);
@@ -2117,8 +2118,8 @@ footer {
     +'.edapop-bd p{color:#4A4640;font-size:13.5px;line-height:1.55;margin:0 0 16px;text-align:center;}'
     +'.edapop input{width:100%;box-sizing:border-box;padding:12px 14px;margin:0 0 10px;border:1px solid #DED7C5;border-radius:6px;background:#fff;font-size:15px;font-family:inherit;color:#0E1626;}'
     +'.edapop input:focus{outline:none;border-color:#B8923F;}'
-    +'.edapop button.edapop-go{width:100%;padding:13px;border:0;border-radius:6px;background:#D4AE5C;color:#07182F;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;}'
-    +'.edapop button.edapop-go:hover{background:#B8923F;}'
+    +'.edapop button.edapop-go,.edapop a.edapop-go{display:block;width:100%;box-sizing:border-box;padding:13px;border:0;border-radius:6px;background:#D4AE5C;color:#07182F;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;text-align:center;text-decoration:none;}'
+    +'.edapop button.edapop-go:hover,.edapop a.edapop-go:hover{background:#B8923F;}'
     +'.edapop-fine{color:#8B8475;font-size:11.5px;text-align:center;margin:12px 0 0;}'
     +'.edapop-fine a{color:#B8923F;}'
     +'.edapop-err{color:#a3341f;font-size:12.5px;text-align:center;margin:0 0 10px;display:none;}'
@@ -2129,27 +2130,27 @@ footer {
 
   var ov=document.createElement('div');ov.className='edapop-ov';
   ov.innerHTML=''
-    +'<div class="edapop" role="dialog" aria-label="Free webinar sign up">'
+    +'<div class="edapop" role="dialog" aria-label="Free webinar recording">'
     +'<button class="edapop-x" aria-label="Close">&times;</button>'
-    +'<div class="edapop-hd"><div class="edapop-eye">Free live webinar</div>'
+    +'<div class="edapop-hd"><div class="edapop-eye">Free webinar recording</div>'
     +'<h2>How to Temporise Veneers, Step by Step</h2>'
-    +'<div class="edapop-when">Tuesday 7 July, 7pm AEST &middot; about 60 minutes</div>'
+    +'<div class="edapop-when">60 minute recording &middot; watch anytime</div>'
     +'<div class="edapop-when" style="margin-top:5px;color:#D4AE5C;">with Dr Kamran Ashraf &amp; Dr Aodhan Docherty</div></div>'
     +'<div class="edapop-bd">'
     +'<div class="edapop-form">'
-    +'<p>Reserve your spot. We will send the join link the day before, and the recording afterwards if you cannot make it live.</p>'
+    +'<p>Get instant access. Drop your details in and we will send the link straight to your inbox.</p>'
     +'<div class="edapop-err"></div>'
     +'<input type="text" class="edapop-fn" placeholder="First name" autocomplete="given-name">'
     +'<input type="email" class="edapop-em" placeholder="Email address" autocomplete="email">'
-    +'<button class="edapop-go">Save my spot</button>'
-    +'<p class="edapop-fine">Prefer the full details? <a href="/webinar">See the webinar page</a></p>'
+    +'<button class="edapop-go">Watch the recording</button>'
+    +'<p class="edapop-fine">Or head straight to the <a href="'+RECORDING_URL+'">recording page</a>.</p>'
     +'</div>'
-    +'<div class="edapop-done"><h3>You are in.</h3><p>Check your inbox for confirmation. We will email your join link on Monday.</p></div>'
+    +'<div class="edapop-done"><h3>Enjoy the recording.</h3><p>The link is on its way to your inbox, or watch it right now.</p><a class="edapop-go" href="'+RECORDING_URL+'">Watch now</a></div>'
     +'</div></div>';
 
   var card=ov.querySelector('.edapop');
   var fn=ov.querySelector('.edapop-fn'), em=ov.querySelector('.edapop-em');
-  var go=ov.querySelector('.edapop-go'), err=ov.querySelector('.edapop-err');
+  var go=ov.querySelector('.edapop-form .edapop-go'), err=ov.querySelector('.edapop-err');
 
   function close(){ov.classList.remove('on');snooze();setTimeout(function(){ov.remove();},320);}
   ov.querySelector('.edapop-x').addEventListener('click',close);
@@ -2160,16 +2161,16 @@ footer {
   go.addEventListener('click',function(){
     err.style.display='none';
     if(!valid()){err.textContent='Please add your first name and a valid email.';err.style.display='block';return;}
-    go.disabled=true;go.textContent='Saving...';
+    go.disabled=true;go.textContent='Sending link...';
     fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+KLAVIYO_COMPANY_ID,{
       method:'POST',headers:{'Content-Type':'application/json','revision':'2024-10-15'},
-      body:JSON.stringify({data:{type:'subscription',attributes:{profile:{data:{type:'profile',attributes:{email:em.value.trim(),first_name:fn.value.trim(),properties:{webinar:WEBINAR,lead_source:'Homepage Popup'}}}}},relationships:{list:{data:{type:'list',id:KLAVIYO_LIST_ID}}}}})
+      body:JSON.stringify({data:{type:'subscription',attributes:{profile:{data:{type:'profile',attributes:{email:em.value.trim(),first_name:fn.value.trim(),properties:{webinar:WEBINAR,lead_source:'Homepage Popup (Evergreen)'}}}}},relationships:{list:{data:{type:'list',id:KLAVIYO_LIST_ID}}}}})
     }).then(function(r){
       if(r.ok||r.status===202){
-        if(window.fbq){fbq('track','Lead',{content_name:WEBINAR});fbq('trackCustom','WebinarRegistration',{content_name:WEBINAR});}
+        if(window.fbq){fbq('track','Lead',{content_name:WEBINAR});fbq('trackCustom','WebinarRecordingRequest',{content_name:WEBINAR});}
         card.classList.add('done');snooze();
-      } else {go.disabled=false;go.textContent='Save my spot';err.textContent='Something went wrong. Please try again.';err.style.display='block';}
-    }).catch(function(){go.disabled=false;go.textContent='Save my spot';err.textContent='Something went wrong. Please try again.';err.style.display='block';});
+      } else {go.disabled=false;go.textContent='Watch the recording';err.textContent='Something went wrong. Please try again.';err.style.display='block';}
+    }).catch(function(){go.disabled=false;go.textContent='Watch the recording';err.textContent='Something went wrong. Please try again.';err.style.display='block';});
   });
 
   setTimeout(function(){
