@@ -78,14 +78,14 @@ h2{font-weight:800;font-size:clamp(1.7rem,4.2vw,2.6rem);letter-spacing:-0.02em;l
 .vids{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 20px;margin-top:40px}
 @media(max-width:860px){.vids{grid-template-columns:1fr}}
 .vid{text-align:center}
-.vid-frame{position:relative;border-radius:10px;overflow:hidden}
+.vid-frame{position:relative;border-radius:10px;overflow:hidden;cursor:pointer}
 .vid-frame image-slot{height:210px;background:var(--wash)}
 .vid-frame .play{position:absolute;inset:0;margin:auto;width:58px;height:42px;background:var(--gold);opacity:.92;border-radius:10px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:2}
 .vid-frame .play svg{width:20px;height:20px;fill:#fff}
 .vid-quote{font-weight:700;font-size:16.5px;color:var(--gold-deep);margin-top:14px}
 .vid-name{font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-top:3px}
 /* ===== review cards ===== */
-.reviews{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 @media(max-width:960px){.reviews{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.reviews{grid-template-columns:1fr}}
 .review{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(16,24,40,.05);text-align:left}
@@ -295,19 +295,16 @@ footer a{color:rgba(244,236,220,.75)}
     <p class="lede">Hear directly from past EPV attendees, what changed in their practice after the course.</p>
     <div class="vids">
       <div class="vid">
-        <div class="vid-frame"><image-slot id="ml-vid1" placeholder="Video testimonial 1" src="assets/video-1-carlos-thumb.jpg"><img loading="lazy" decoding="async" src="assets/video-1-carlos-thumb.jpg" alt="Dr Carlos Nakhla testimonial" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        <div class="vid-quote">"I quoted three veneer cases the week after. All three accepted."</div>
-        <div class="vid-name">Dr J. Williams · EPV Sydney</div>
+        <div class="vid-frame" role="button" tabindex="0" data-stream="2ff2d0f01255a42efedcbea2b83448fb" data-stream-name="Dr Carlos Nakhla, Exceptional Porcelain Veneers, Sydney"><image-slot id="ml-vid1" placeholder="Video testimonial 1" src="assets/video-1-carlos-thumb.jpg"><img loading="lazy" decoding="async" src="assets/video-1-carlos-thumb.jpg" alt="Dr Carlos Nakhla testimonial" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="vid-name">Dr Carlos Nakhla · EPV Sydney</div>
       </div>
       <div class="vid">
-        <div class="vid-frame"><image-slot id="ml-vid2" placeholder="Video testimonial 2" src="assets/video-2-michael-newcastle-thumb.jpg"><img loading="lazy" decoding="async" src="assets/video-2-michael-newcastle-thumb.jpg" alt="Dr Michael testimonial" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        <div class="vid-quote">"Prep time down from 90 to 40 minutes a tooth."</div>
-        <div class="vid-name">Dr A. Kapoor · EPV Melbourne</div>
+        <div class="vid-frame" role="button" tabindex="0" data-stream="ab155a8d0f1263cc3ca95ce2d4874b20" data-stream-name="Dr Michael Atta, Exceptional Porcelain Veneers, Newcastle"><image-slot id="ml-vid2" placeholder="Video testimonial 2" src="assets/video-2-michael-newcastle-thumb.jpg"><img loading="lazy" decoding="async" src="assets/video-2-michael-newcastle-thumb.jpg" alt="Dr Michael testimonial" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="vid-name">Dr Michael Atta · EPV Newcastle</div>
       </div>
       <div class="vid">
-        <div class="vid-frame"><image-slot id="ml-vid3" placeholder="Video testimonial 3" src="assets/video-3-michael-sydney-thumb.jpg"><img loading="lazy" decoding="async" src="assets/video-3-michael-sydney-thumb.jpg" alt="Dr Michael Atta testimonial" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        <div class="vid-quote">"You leave with the actual workflow, not a watered-down version."</div>
-        <div class="vid-name">Dr L. Tran · EPV Brisbane</div>
+        <div class="vid-frame" role="button" tabindex="0" data-stream="6bb9b911050f51db50e6e48fcff0cf4b" data-stream-name="Dr Michael Atta, Exceptional Porcelain Veneers, Sydney"><image-slot id="ml-vid3" placeholder="Video testimonial 3" src="assets/video-3-michael-sydney-thumb.jpg"><img loading="lazy" decoding="async" src="assets/video-3-michael-sydney-thumb.jpg" alt="Dr Michael Atta testimonial" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="vid-name">Dr Michael Atta · EPV Sydney</div>
       </div>
     </div>
   </div>
@@ -318,10 +315,9 @@ footer a{color:rgba(244,236,220,.75)}
   <div class="wrap center">
     <h2>Feedback you <em class="s">can't manufacture.</em></h2>
     <div class="reviews">
-      <div class="review"><div class="stars">★★★★★</div><h4>First full-arch case within a month</h4><p>I'd been referring these out for years. Booked my first 10-unit case four weeks after Sydney.</p><div class="who">EPV graduate · NSW</div></div>
-      <div class="review"><div class="stars">★★★★★</div><h4>The time budgets changed everything</h4><p>Knowing exactly what happens at each appointment, and how long it takes, removed the fear of quoting.</p><div class="who">EPV graduate · VIC</div></div>
-      <div class="review"><div class="stars">★★★★★</div><h4>Lab back-and-forth basically stopped</h4><p>My prescriptions are precise now. Remakes are down and my lab actually thanked me.</p><div class="who">EPV graduate · QLD</div></div>
-      <div class="review"><div class="stars">★★★★★</div><h4>Quoting with confidence</h4><p>One accepted case covered the course fee. More importantly, I now know exactly which cases to say yes to.</p><div class="who">EPV graduate · WA</div></div>
+      <div class="review"><div class="stars">★★★★★</div><h4>Three degrees can change everything</h4><p>"They might see you angling your bur three degrees too much, that can make all the difference in the world."</p><div class="who">Dr Carlos Nakhla · EPV Sydney</div></div>
+      <div class="review"><div class="stars">★★★★★</div><h4>Confidence from A to Z</h4><p>"I have the confidence to talk to a patient and go from A to Z with no hesitation."</p><div class="who">Dr Michael Atta · EPV Sydney</div></div>
+      <div class="review"><div class="stars">★★★★★</div><h4>They have thought through what can go wrong</h4><p>"The mentors have already thought through everything that will go wrong or right, that thought process made a lot of sense and I want to bring it back home."</p><div class="who">Wan Ting · EPV Singapore</div></div>
     </div>
   </div>
 </section>
@@ -392,5 +388,45 @@ document.querySelectorAll('.acc-q').forEach(function(btn){
 </script>
 
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="eventbrite.com.au/e/"]');if(a&&window.fbq){fbq('track','InitiateCheckout');}},true);</script>
+<div id="video-lightbox" class="video-lightbox" aria-hidden="true">
+  <div class="video-lightbox-inner">
+    <button class="video-lightbox-close" aria-label="Close video">&times;</button>
+    <div class="video-lightbox-frame"></div>
+    <div class="video-lightbox-cap"></div>
+  </div>
+</div>
+<style>
+.video-lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(6,16,36,.92);padding:24px}
+.video-lightbox.open{display:flex}
+.video-lightbox-inner{position:relative;width:100%;max-width:900px}
+.video-lightbox-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.video-lightbox-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-lightbox-close{position:absolute;top:-44px;right:0;background:none;border:none;color:#f4ecdc;font-size:34px;line-height:1;cursor:pointer;padding:4px 10px}
+.video-lightbox-cap{margin-top:14px;text-align:center;color:rgba(244,236,220,.8);font-size:13px;letter-spacing:.02em}
+</style>
+<script>
+(function(){
+  var SUBDOMAIN="customer-l4rp2g0v9kp33iv3.cloudflarestream.com";
+  var box=document.getElementById("video-lightbox");
+  var frame=box.querySelector(".video-lightbox-frame");
+  var cap=box.querySelector(".video-lightbox-cap");
+  var closeBtn=box.querySelector(".video-lightbox-close");
+  function openVideo(id,name){
+    frame.innerHTML='<iframe src="https://'+SUBDOMAIN+'/'+id+'/iframe?autoplay=true" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>';
+    cap.textContent=name||"";
+    box.classList.add("open");box.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+    if(window.fbq)fbq('trackCustom','TestimonialPlay',{content_name:name||''});
+  }
+  function closeVideo(){frame.innerHTML="";box.classList.remove("open");box.setAttribute("aria-hidden","true");document.body.style.overflow="";}
+  document.querySelectorAll(".vid-frame[data-stream]").forEach(function(t){
+    function go(){openVideo(t.getAttribute("data-stream"),t.getAttribute("data-stream-name"));}
+    t.addEventListener("click",go);
+    t.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});
+  });
+  closeBtn.addEventListener("click",closeVideo);
+  box.addEventListener("click",function(e){if(e.target===box)closeVideo();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&box.classList.contains("open"))closeVideo();});
+})();
+</script>
 </body>
 </html>
