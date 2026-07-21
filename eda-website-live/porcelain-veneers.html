@@ -964,6 +964,9 @@ section { padding: 100px 32px; position: relative; }
   transition: background 0.2s;
 }
 .date-row:hover { background: rgba(212,174,92,0.05); }
+.date-row { scroll-margin-top: 96px; }
+.date-row:target { box-shadow: inset 3px 0 0 var(--gold); animation: cohortFlash 1.8s ease-out 1; }
+@keyframes cohortFlash { 0% { background: rgba(212,174,92,0.30); } 100% { background: rgba(212,174,92,0.05); } }
 .date-city {
   font-family: var(--sans);
   font-weight: 700;
@@ -1242,11 +1245,11 @@ footer {
 
       <div class="hero-cities">
         <div class="hero-cities-label">2026 cohorts, now national · tap a city to book</div>
-        <a href="#dates" class="city-pill"><span>●</span> Melbourne <em>11 Jul</em></a>
-        <a href="#dates" class="city-pill"><span>●</span> Sydney <em>1 Aug</em></a>
-        <a href="#dates" class="city-pill"><span>●</span> Hobart <em>17 Oct</em></a>
-        <a href="#dates" class="city-pill"><span>●</span> Perth <em>24 Oct</em></a>
-        <a href="#dates" class="city-pill"><span>●</span> Brisbane <em>21 Nov</em></a>
+        <a href="#cohort-melbourne" class="city-pill"><span>●</span> Melbourne <em>11 Jul</em></a>
+        <a href="#cohort-sydney" class="city-pill"><span>●</span> Sydney <em>1 Aug</em></a>
+        <a href="#cohort-hobart" class="city-pill"><span>●</span> Hobart <em>17 Oct</em></a>
+        <a href="#cohort-perth" class="city-pill"><span>●</span> Perth <em>24 Oct</em></a>
+        <a href="#cohort-brisbane" class="city-pill"><span>●</span> Brisbane <em>21 Nov</em></a>
       </div>
     </div>
 
@@ -1560,31 +1563,31 @@ footer {
     <p class="section-lede">EPV now runs in five cities across 2026. Seats are capped at 30 per cohort and the earlier dates fill first, booking goes through Eventbrite.</p>
 
     <div class="dates-list">
-      <div class="date-row">
+      <div class="date-row" id="cohort-melbourne">
         <div class="date-city">Melbourne</div>
         <div class="date-when"><strong>Saturday 11 July 2026</strong> · 9am start · 2 days</div>
         <span class="date-status status-fast">1 ticket left</span>
         <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-melbourne-tickets-1984586207771" id="eb-trigger-1" target="_blank" class="date-book">Book seat</a>
       </div>
-      <div class="date-row">
+      <div class="date-row" id="cohort-sydney">
         <div class="date-city">Sydney</div>
         <div class="date-when"><strong>Saturday 1 August 2026</strong> · 9:00am start · 2 days</div>
         <span class="date-status status-fast">Selling fast</span>
         <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-sydney-tickets-1990365162781" id="eb-trigger-2" target="_blank" class="date-book">Book seat</a>
       </div>
-      <div class="date-row">
+      <div class="date-row" id="cohort-hobart">
         <div class="date-city">Hobart <em>· TAS</em></div>
         <div class="date-when"><strong>Saturday 17 October 2026</strong> · 9:00am start · 2 days</div>
         <span class="date-status status-open">Early bird</span>
         <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-hobart-tasmania-tickets-1990366303192" id="eb-trigger-3" target="_blank" class="date-book">Book seat</a>
       </div>
-      <div class="date-row">
+      <div class="date-row" id="cohort-perth">
         <div class="date-city">Perth</div>
         <div class="date-when"><strong>Saturday 24 October 2026</strong> · 9:00am start · 2 days</div>
         <span class="date-status status-open">Early bird</span>
         <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-perth-tickets-1990366652236" id="eb-trigger-4" target="_blank" class="date-book">Book seat</a>
       </div>
-      <div class="date-row">
+      <div class="date-row" id="cohort-brisbane">
         <div class="date-city">Brisbane</div>
         <div class="date-when"><strong>Saturday 21 November 2026</strong> · 9:00am start · 2 days</div>
         <span class="date-status status-open">Early bird</span>
