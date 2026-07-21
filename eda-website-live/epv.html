@@ -50,11 +50,9 @@ h2{font-weight:800;font-size:clamp(1.7rem,4.2vw,2.6rem);letter-spacing:-0.02em;l
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:#d4ae5c}
 .hero .paren{font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:700;margin-top:14px;color:rgba(244,236,220,.92)}
 .hero .sub{font-size:16.5px;color:rgba(244,236,220,.72);max-width:620px;margin:18px auto 0;text-wrap:pretty}
-.hero-video{position:relative;max-width:720px;margin:34px auto 0;border-radius:10px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45)}
-.hero-video image-slot{height:400px;background:#06101f}
-@media(max-width:640px){.hero-video image-slot{height:220px}}
-.hero-video .play{position:absolute;inset:0;margin:auto;width:76px;height:54px;background:var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:2}
-.hero-video .play svg{width:26px;height:26px;fill:#fff}
+.hero-video{position:relative;width:100%;max-width:392px;margin:34px auto 0;border-radius:14px;overflow:hidden;background:#06101f;aspect-ratio:4/5;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.hero-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+@media(max-width:640px){.hero-video{max-width:320px}}
 .hero-cta{margin-top:34px}
 .hero-note{font-size:13.5px;color:rgba(244,236,220,.65);margin-top:12px}
 .hero-note strong{color:#f4ecdc}
@@ -193,8 +191,7 @@ footer a{color:rgba(244,236,220,.75)}
     <div class="paren">Two days. Fully hands-on. You prep 12 teeth.</div>
     <p class="sub">Diagnosis, preparation, bonding and occlusion, distilled into a step-by-step workflow you can run on the cases walking through your door on Monday.</p>
     <div class="hero-video">
-      <image-slot id="ml-hero-video" placeholder="Video thumbnail: Aodhan speaking to camera" src="assets/mom-1-aodhan-speaking.jpg"><img loading="eager" decoding="async" src="assets/mom-1-aodhan-speaking.jpg" alt="Dr Aodhan Docherty presenting at an EDA masterclass" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot>
-      <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <iframe src="https://customer-l4rp2g0v9kp33iv3.cloudflarestream.com/70ab8d5cc63fe9145eded13e42196c2a/iframe?autoplay=true&muted=true&loop=true&controls=true&preload=auto" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="Exceptional Porcelain Veneers masterclass"></iframe>
     </div>
     <div class="hero-cta">
       <a href="#dates" class="btn gold">Book your seat <span>→</span></a>
