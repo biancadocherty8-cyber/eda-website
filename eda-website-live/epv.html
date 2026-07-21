@@ -45,7 +45,7 @@ h2{font-weight:800;font-size:clamp(1.7rem,4.2vw,2.6rem);letter-spacing:-0.02em;l
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 55% at 50% 0%,rgba(212,174,92,.14),transparent 65%);pointer-events:none}
 .hero .wrap-n{position:relative}
 .hero-brand{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,236,220,.85);margin-bottom:30px}
-.hero-brand span{width:26px;height:26px;border-radius:50%;background:#f4ecdc;color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px}
+.hero-brand img{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:center;background:#F1ECE0;display:inline-block;vertical-align:middle}
 .hero h1{font-weight:800;font-size:clamp(1.9rem,5.4vw,3.3rem);letter-spacing:-0.02em;line-height:1.08;text-wrap:pretty}
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:#d4ae5c}
 .hero .paren{font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:700;margin-top:14px;color:rgba(244,236,220,.92)}
@@ -186,7 +186,7 @@ footer a{color:rgba(244,236,220,.75)}
 <!-- HERO -->
 <section class="hero" data-screen-label="Hero">
   <div class="wrap-n">
-    <div class="hero-brand"><span>E</span> Exceptional Dental Academy</div>
+    <div class="hero-brand"><img loading="eager" fetchpriority="high" decoding="async" src="assets/eda-logo-mark-square.jpg" alt="Exceptional Dental Academy"> Exceptional Dental Academy</div>
     <h1>Porcelain veneers, turned into a <em>system you can repeat</em></h1>
     <div class="paren">Two days. Fully hands-on. You prep 12 teeth.</div>
     <p class="sub">Diagnosis, preparation, bonding and occlusion, distilled into a step-by-step workflow you can run on the cases walking through your door on Monday.</p>
