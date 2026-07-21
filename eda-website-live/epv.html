@@ -228,7 +228,7 @@ footer a{color:rgba(244,236,220,.75)}
           <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Sat 1 &amp; Sun 2 August</span>
           <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 9:00am - 5:00pm</span>
         </div>
-        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-sydney-tickets-1990365162781" target="_blank" class="btn">Book Sydney</a>
+        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-sydney-tickets-1990365162781" id="eb-epv-1" target="_blank" class="btn">Book Sydney</a>
       </div>
       <div class="city-card">
         <h3>Hobart</h3>
@@ -238,7 +238,7 @@ footer a{color:rgba(244,236,220,.75)}
           <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Sat 17 &amp; Sun 18 October</span>
           <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 9:00am - 5:00pm</span>
         </div>
-        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-hobart-tasmania-tickets-1990366303192" target="_blank" class="btn">Book Hobart</a>
+        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-hobart-tasmania-tickets-1990366303192" id="eb-epv-2" target="_blank" class="btn">Book Hobart</a>
       </div>
       <div class="city-card">
         <h3>Perth</h3>
@@ -248,7 +248,7 @@ footer a{color:rgba(244,236,220,.75)}
           <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Sat 24 &amp; Sun 25 October</span>
           <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 9:00am - 5:00pm</span>
         </div>
-        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-perth-tickets-1990366652236" target="_blank" class="btn">Book Perth</a>
+        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-perth-tickets-1990366652236" id="eb-epv-3" target="_blank" class="btn">Book Perth</a>
       </div>
       <div class="city-card">
         <h3>Brisbane</h3>
@@ -258,7 +258,7 @@ footer a{color:rgba(244,236,220,.75)}
           <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Sat 21 &amp; Sun 22 November</span>
           <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 9:00am - 5:00pm</span>
         </div>
-        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-brisbane-tickets-1990366884932" target="_blank" class="btn">Book Brisbane</a>
+        <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-brisbane-tickets-1990366884932" id="eb-epv-4" target="_blank" class="btn">Book Brisbane</a>
       </div>
     </div>
   </div>
@@ -384,6 +384,9 @@ document.querySelectorAll('.acc-q').forEach(function(btn){
 });
 </script>
 
+<!-- Eventbrite Embedded Checkout -->
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+<script>(function(){var ev=[{id:'eb-epv-1',eid:'1990365162781',name:'EPV Sydney'},{id:'eb-epv-2',eid:'1990366303192',name:'EPV Hobart'},{id:'eb-epv-3',eid:'1990366652236',name:'EPV Perth'},{id:'eb-epv-4',eid:'1990366884932',name:'EPV Brisbane'}];var __inApp=/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent||"");if(__inApp){ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.setAttribute("target","_self");try{var u=new URL(el.href);u.searchParams.set("utm_source","meta");u.searchParams.set("utm_medium","paid_social");u.searchParams.set("utm_campaign","inapp_booking");el.href=u.toString();}catch(_){}}});return;}function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id,onOrderComplete:function(){if(window.fbq)fbq("track","Purchase",{content_name:e.name,content_ids:[e.eid],content_type:"product"});}});}});}go();})();</script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="eventbrite.com.au/e/"]');if(a&&window.fbq){fbq('track','InitiateCheckout');}},true);</script>
 <div id="video-lightbox" class="video-lightbox" aria-hidden="true">
   <div class="video-lightbox-inner">
