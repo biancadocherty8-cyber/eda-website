@@ -685,8 +685,8 @@ section { padding: 100px 32px; position: relative; }
   align-items: center;
 }
 @media (max-width: 860px) { .handson-grid { grid-template-columns: 1fr; gap: 36px; } }
-.handson-single { border-radius: 4px; overflow: hidden; height: 420px; }
-@media (max-width:640px){ .handson-single { height: 260px; } }
+.handson-single { border-radius: 4px; overflow: hidden; aspect-ratio: 3 / 4; }
+@media (max-width:640px){ .handson-single { aspect-ratio: 4 / 5; } }
 .handson-img-stack {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1388,7 +1388,7 @@ footer {
       </div>
     </div>
     <div class="handson-grid">
-      <div class="handson-single"><image-slot id="epv-ho-1" src="assets/hero-sm-2-kam-demo-v2.jpg"><img loading="lazy" decoding="async" src="assets/hero-sm-2-kam-demo-v2.jpg" alt="Dr Kamran Ashraf demonstrating hands-on porcelain veneer prep" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;"></image-slot></div>
+      <div class="handson-single"><image-slot id="epv-ho-1" src="assets/hero-sm-2-kam-demo-v2.jpg"><img loading="lazy" decoding="async" src="assets/hero-sm-2-kam-demo-v2.jpg" alt="Dr Kamran Ashraf demonstrating hands-on porcelain veneer prep" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot></div>
       <ul class="handson-steps">
         <li class="handson-step"><div class="handson-step-num">1</div><div><h4>Prescribe smile designs across five cases</h4><p>Work through five real patient cases, diagnosing, planning and prescribing the design for each.</p></div></li>
         <li class="handson-step"><div class="handson-step-num">2</div><div><h4>Fabricate custom putty keys</h4><p>Build incisal reduction, B-plane reduction and ideal mock-up keys from scratch.</p></div></li>
