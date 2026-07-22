@@ -695,6 +695,8 @@ section { padding: 100px 32px; position: relative; }
   align-items: center;
 }
 @media (max-width: 860px) { .handson-grid { grid-template-columns: 1fr; gap: 36px; } }
+.handson-single { border-radius: 4px; overflow: hidden; height: 420px; }
+@media (max-width:640px){ .handson-single { height: 260px; } }
 .handson-img-stack {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1189,7 +1191,9 @@ footer {
 /* compact image sizing */
 @media (max-width: 640px){
   .hero-photo-main, .hero-photo-main image-slot { height: 300px; }
-  .handson-img-stack { min-height: 240px; }
+  .handson-single { border-radius: 4px; overflow: hidden; height: 420px; }
+@media (max-width:640px){ .handson-single { height: 260px; } }
+.handson-img-stack { min-height: 240px; }
   .who-img { aspect-ratio: 4 / 3; }
   .case-single { aspect-ratio: 4 / 3; }
 }
@@ -1385,11 +1389,7 @@ footer {
       </div>
     </div>
     <div class="handson-grid">
-      <div class="handson-img-stack">
-        <div class="big"><image-slot id="aar-ho-1" src="assets/aar-ho-1.jpg"><img loading="lazy" decoding="async" src="assets/aar-ho-1.jpg" alt="Cohort working hands-on at Exceptional Dental Academy" style="width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block;"></image-slot></div>
-        <div><image-slot id="aar-ho-2" src="assets/aar-ho-2.jpg"><img loading="lazy" decoding="async" src="assets/aar-ho-2.jpg" alt="Close-up: working the occlusion on a model" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot></div>
-        <div><image-slot id="aar-ho-3" src="assets/aar-ho-3.jpg"><img loading="lazy" decoding="async" src="assets/aar-ho-3.jpg" alt="Faculty demonstrating occlusal assessment" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;"></image-slot></div>
-      </div>
+      <div class="handson-single"><image-slot id="aar-ho-2" src="assets/aar-ho-2.jpg"><img loading="lazy" decoding="async" src="assets/aar-ho-2.jpg" alt="Working the occlusion by hand on a model at Exceptional Dental Academy" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot></div>
       <ul class="handson-steps">
         <li class="handson-step"><div class="handson-step-num">1</div><div><h4>Identify &amp; record CR and CO</h4><p>Find centric relation, verify it, record it, and understand how to transition CO=MIP.</p></div></li>
         <li class="handson-step"><div class="handson-step-num">2</div><div><h4>Deprogramming techniques</h4><p>Work with leaf gauges, Lucia jigs, Kois deprogrammers and anterior deprogrammers, and learn when each is indicated.</p></div></li>
