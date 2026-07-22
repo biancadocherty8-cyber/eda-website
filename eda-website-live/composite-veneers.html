@@ -695,6 +695,7 @@ section { padding: 100px 32px; position: relative; }
   align-items: center;
 }
 @media (max-width: 860px) { .handson-grid { grid-template-columns: 1fr; gap: 36px; } }
+.handson-grid-noimg { grid-template-columns: 1fr; max-width: 720px; }
 .handson-img-stack {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1247,8 +1248,8 @@ footer {
 
     <div class="hero-photo-wrap">
       <div class="hero-photo-main">
-        <image-slot id="cvm-hero-main" fit="cover" src="assets/featured-beforeafter.jpg"><img loading="eager" fetchpriority="high" decoding="async" src="assets/featured-beforeafter.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot>
-        <div class="hero-photo-tag"><span>↳</span> Composite veneers · final result</div>
+        <image-slot id="cvm-hero-main" fit="cover" src="assets/mom-8-hands-on-cohort-v2.jpg"><img loading="eager" fetchpriority="high" decoding="async" src="assets/mom-8-hands-on-cohort-v2.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot>
+        <div class="hero-photo-tag"><span>↳</span> Small-group, hands-on</div>
       </div>
     </div>
   </div>
@@ -1379,12 +1380,7 @@ footer {
         <h2 class="section-h">You'll layer veneers <em>by hand.</em> Not watch someone else do it.</h2>
       </div>
     </div>
-    <div class="handson-grid">
-      <div class="handson-img-stack">
-        <div class="big"><image-slot id="cvm-ho-1" fit="cover" src="assets/hero-sm-2-cohort-handson.jpg"><img loading="lazy" decoding="async" src="assets/hero-sm-2-cohort-handson.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot></div>
-        <div><image-slot id="cvm-ho-2" fit="cover" src="assets/course-img-1-incisal-tinting.jpg"><img loading="lazy" decoding="async" src="assets/course-img-1-incisal-tinting.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot></div>
-        <div><image-slot id="cvm-ho-3" fit="cover" src="assets/case-yemine-after.jpg"><img loading="lazy" decoding="async" src="assets/case-yemine-after.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;"></image-slot></div>
-      </div>
+    <div class="handson-grid handson-grid-noimg">
       <ul class="handson-steps">
         <li class="handson-step"><div class="handson-step-num">1</div><div><h4>Monochromatic veneers on typodont</h4><p>Build a palatal-incisal framework from a stent, then layer predictable single-shade maxillary veneers.</p></div></li>
         <li class="handson-step"><div class="handson-step-num">2</div><div><h4>Cut-back &amp; tinting</h4><p>Create the incisal halo, mamelons and translucency with white, violet and pink-opaque tints.</p></div></li>
