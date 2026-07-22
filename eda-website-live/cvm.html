@@ -82,7 +82,7 @@ h2{font-weight:800;font-size:clamp(1.7rem,4.2vw,2.6rem);letter-spacing:-0.02em;l
 .vid-quote{font-weight:700;font-size:16.5px;color:var(--gold-deep);margin-top:14px}
 .vid-name{font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-top:3px}
 /* ===== review cards ===== */
-.reviews{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;max-width:1000px;margin-left:auto;margin-right:auto}
 @media(max-width:960px){.reviews{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.reviews{grid-template-columns:1fr}}
 .review{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(16,24,40,.05);text-align:left}
@@ -277,6 +277,16 @@ footer a{color:rgba(244,236,220,.75)}
 </section>
 
 <!-- REVIEW CARDS -->
+<section data-screen-label="Reviews">
+  <div class="wrap center">
+    <h2>Feedback you <em class="s">can't manufacture.</em></h2>
+    <div class="reviews">
+      <div class="review"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h4>The confidence to start</h4><p>"It was the confidence thing for me. Having someone check your work and show you refinements you wouldn't spot yourself was really good."</p><div class="who">Dr Molly Robinson &middot; CVM graduate, 1 year in private practice</div></div>
+      <div class="review"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h4>Not out of my depth anymore</h4><p>"When a patient comes in asking for veneers, I'm not out of my depth anymore. I'm confident in what I can offer and giving them the best result possible."</p><div class="who">Dr Lewis Daly &middot; CVM graduate, Sunshine Coast</div></div>
+      <div class="review"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h4>Straight into cases the next week</h4><p>"I wanted to refine my finishing and line angles, and they spent a lot of time on exactly that. I've got two composite veneer cases lined up this week already."</p><div class="who">Dr Ram Nathwani &middot; CVM graduate, 15 years in practice</div></div>
+    </div>
+  </div>
+</section>
 
 
 <!-- HOW IT WORKS -->
