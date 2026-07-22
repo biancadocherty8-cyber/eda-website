@@ -844,6 +844,7 @@ section { padding: 100px 32px; position: relative; }
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+.video-tile{cursor:pointer}
 .video-tile:hover { transform: translateY(-3px); box-shadow: 0 22px 50px rgba(10, 25, 50, 0.18); }
 .video-tile-overlay {
   position: absolute; inset: 0;
@@ -1465,37 +1466,37 @@ footer {
       <p class="section-lede">Hear directly from past AAR attendees, what changed in their practice after the course.</p>
     </div>
     <div class="testimonials-row">
-      <div class="video-tile">
-        <image-slot id="aar-vid1" src="assets/mom-1-aodhan-speaking.jpg"><img loading="lazy" decoding="async" src="assets/mom-1-aodhan-speaking.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;"></image-slot>
+      <div class="video-tile" role="button" tabindex="0" data-stream="c7979ffd68de10d1350eb274b93f491b" data-stream-name="Peter">
+        <image-slot id="aar-vid1" src="https://customer-l4rp2g0v9kp33iv3.cloudflarestream.com/c7979ffd68de10d1350eb274b93f491b/thumbnails/thumbnail.jpg?height=640"><img loading="lazy" decoding="async" src="https://customer-l4rp2g0v9kp33iv3.cloudflarestream.com/c7979ffd68de10d1350eb274b93f491b/thumbnails/thumbnail.jpg?height=640" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;"></image-slot>
         <div class="video-tile-overlay"></div>
         <span class="video-tile-label">Watch</span>
         <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="video-tile-info">
           <div class="video-tile-quote"></div>
-          <div class="video-tile-name"></div>
-          <div class="video-tile-role"></div>
+          <div class="video-tile-name">Peter</div>
+          <div class="video-tile-role">Advanced Aesthetic Rehabilitation</div>
         </div>
       </div>
-      <div class="video-tile">
-        <image-slot id="aar-vid2" src="assets/mom-4-phantom-practice-v2.jpg"><img loading="lazy" decoding="async" src="assets/mom-4-phantom-practice-v2.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;"></image-slot>
+      <div class="video-tile" role="button" tabindex="0" data-stream="48252c0570974dc0e2317aad76fd63c4" data-stream-name="Selena">
+        <image-slot id="aar-vid2" src="https://customer-l4rp2g0v9kp33iv3.cloudflarestream.com/48252c0570974dc0e2317aad76fd63c4/thumbnails/thumbnail.jpg?height=640"><img loading="lazy" decoding="async" src="https://customer-l4rp2g0v9kp33iv3.cloudflarestream.com/48252c0570974dc0e2317aad76fd63c4/thumbnails/thumbnail.jpg?height=640" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;"></image-slot>
         <div class="video-tile-overlay"></div>
         <span class="video-tile-label">Watch</span>
         <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="video-tile-info">
           <div class="video-tile-quote"></div>
-          <div class="video-tile-name"></div>
-          <div class="video-tile-role"></div>
+          <div class="video-tile-name">Selena</div>
+          <div class="video-tile-role">Advanced Aesthetic Rehabilitation</div>
         </div>
       </div>
-      <div class="video-tile">
-        <image-slot id="aar-vid3" src="assets/mom-6-rehab.jpg"><img loading="lazy" decoding="async" src="assets/mom-6-rehab.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;"></image-slot>
+      <div class="video-tile" role="button" tabindex="0" data-stream="09f675cb09a3f8af8807baea338212b9" data-stream-name="Emanuel">
+        <image-slot id="aar-vid3" src="https://customer-l4rp2g0v9kp33iv3.cloudflarestream.com/09f675cb09a3f8af8807baea338212b9/thumbnails/thumbnail.jpg?height=640"><img loading="lazy" decoding="async" src="https://customer-l4rp2g0v9kp33iv3.cloudflarestream.com/09f675cb09a3f8af8807baea338212b9/thumbnails/thumbnail.jpg?height=640" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;"></image-slot>
         <div class="video-tile-overlay"></div>
         <span class="video-tile-label">Watch</span>
         <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="video-tile-info">
           <div class="video-tile-quote"></div>
-          <div class="video-tile-name"></div>
-          <div class="video-tile-role"></div>
+          <div class="video-tile-name">Emanuel</div>
+          <div class="video-tile-role">Advanced Aesthetic Rehabilitation</div>
         </div>
       </div>
     </div>
@@ -1684,5 +1685,24 @@ footer {
 })();
 </script>
 
+<div id="video-lightbox" class="video-lightbox" aria-hidden="true">
+  <div class="video-lightbox-inner"><button class="video-lightbox-close" aria-label="Close video">&times;</button><div class="video-lightbox-frame"></div><div class="video-lightbox-cap"></div></div>
+</div>
+<style>
+.video-lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(6,16,36,.92);padding:24px}
+.video-lightbox.open{display:flex}
+.video-lightbox-inner{position:relative;width:100%;max-width:420px}
+.video-lightbox-frame{position:relative;width:100%;aspect-ratio:9/16;max-height:78vh;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.video-lightbox-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-lightbox-close{position:absolute;top:-44px;right:0;background:none;border:none;color:#f4ecdc;font-size:34px;line-height:1;cursor:pointer;padding:4px 10px}
+.video-lightbox-cap{margin-top:14px;text-align:center;color:rgba(244,236,220,.8);font-size:13px;letter-spacing:.02em}
+</style>
+<script>
+(function(){var SUBDOMAIN="customer-l4rp2g0v9kp33iv3.cloudflarestream.com";var box=document.getElementById("video-lightbox");var frame=box.querySelector(".video-lightbox-frame");var cap=box.querySelector(".video-lightbox-cap");var closeBtn=box.querySelector(".video-lightbox-close");
+function openVideo(id,name){frame.innerHTML='<iframe src="https://'+SUBDOMAIN+'/'+id+'/iframe?autoplay=true" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>';cap.textContent=name||"";box.classList.add("open");box.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";if(window.fbq)fbq('trackCustom','TestimonialPlay',{content_name:name||''});}
+function closeVideo(){frame.innerHTML="";box.classList.remove("open");box.setAttribute("aria-hidden","true");document.body.style.overflow="";}
+document.querySelectorAll(".video-tile[data-stream]").forEach(function(t){function go(){openVideo(t.getAttribute("data-stream"),t.getAttribute("data-stream-name"));}t.addEventListener("click",go);t.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});});
+closeBtn.addEventListener("click",closeVideo);box.addEventListener("click",function(e){if(e.target===box)closeVideo();});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&box.classList.contains("open"))closeVideo();});})();
+</script>
 </body>
 </html>
