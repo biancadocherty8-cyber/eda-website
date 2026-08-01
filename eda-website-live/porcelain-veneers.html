@@ -1575,6 +1575,64 @@ footer {
         <a href="https://www.eventbrite.com.au/e/exceptional-porcelain-veneers-epv-brisbane-tickets-1990366884932" id="eb-trigger-5" target="_blank" class="date-book">Book seat</a>
       </div>
     </div>
+    <!-- 2027 WAITLIST -->
+    <div class="wl-band">
+      <style>
+        .wl-band{margin:34px auto 0;max-width:680px}
+        .wl-card{background:#0B2345;border:1px solid rgba(212,174,92,.35);border-radius:14px;padding:30px 28px;text-align:center;color:#f4ecdc;box-shadow:0 20px 50px rgba(11,35,69,.18)}
+        .wl-eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d4ae5c;margin-bottom:10px}
+        .wl-card h3{font-weight:800;font-size:clamp(1.3rem,3.2vw,1.7rem);letter-spacing:-0.01em;line-height:1.15;color:#fff;margin:0}
+        .wl-card p{font-size:14.5px;color:rgba(244,236,220,.75);margin:10px auto 20px;max-width:460px}
+        .wl-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:520px;margin:0 auto}
+        .wl-form input{flex:1 1 180px;min-width:0;padding:13px 14px;border:1px solid rgba(255,255,255,.18);border-radius:6px;font-family:inherit;font-size:15.5px;color:#fff;background:rgba(255,255,255,.06)}
+        .wl-form input::placeholder{color:rgba(244,236,220,.55)}
+        .wl-form input:focus{outline:2px solid #d4ae5c;background:rgba(255,255,255,.1)}
+        .wl-form button{flex:0 0 auto;background:#d4ae5c;color:#0B2345;font-family:inherit;font-weight:800;font-size:15.5px;padding:13px 24px;border:none;border-radius:6px;cursor:pointer;transition:background .15s,transform .15s}
+        .wl-form button:hover{background:#c39a44;transform:translateY(-1px)}
+        .wl-form button:disabled{opacity:.6;cursor:default;transform:none}
+        .wl-msg{font-size:14px;margin-top:16px;font-weight:600;display:none}
+        .wl-msg.show{display:block}
+        .wl-msg.ok{color:#9be15d}
+        .wl-msg.err{color:#f3b0b0}
+        .wl-note{font-size:11.5px;color:rgba(244,236,220,.5);margin-top:12px;letter-spacing:.02em}
+        @media(max-width:480px){.wl-form button{flex:1 1 100%}}
+      </style>
+      <div class="wl-card">
+        <div class="wl-eyebrow">2027 dates</div>
+        <h3>More dates are coming. Join the waitlist.</h3>
+        <p>Be first to hear when new Exceptional Porcelain Veneers cohorts open for 2027. No spam, unsubscribe any time.</p>
+        <form class="wl-form" id="wlForm" novalidate>
+          <input type="text" id="wlName" placeholder="First name" autocomplete="given-name" aria-label="First name">
+          <input type="email" id="wlEmail" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
+          <button type="submit" id="wlBtn">Join the waitlist</button>
+        </form>
+        <div class="wl-msg" id="wlMsg" role="status"></div>
+        <div class="wl-note">You'll only hear from us about new EPV dates.</div>
+      </div>
+      <script>
+      (function(){
+        var KID='RqySRe', LIST='XgEAAe';
+        var f=document.getElementById('wlForm'), em=document.getElementById('wlEmail'), nm=document.getElementById('wlName'), b=document.getElementById('wlBtn'), m=document.getElementById('wlMsg');
+        function msg(t,ok){m.textContent=t;m.className='wl-msg show '+(ok?'ok':'err');}
+        f.addEventListener('submit',function(e){
+          e.preventDefault();
+          if(!/.+@.+\..+/.test(em.value.trim())){msg('Please enter a valid email.',false);return;}
+          b.disabled=true; var old=b.textContent; b.textContent='Adding you...';
+          var payload={data:{type:'subscription',attributes:{profile:{data:{type:'profile',attributes:{
+            email:em.value.trim(), first_name:nm.value.trim(),
+            properties:{course:'Exceptional Porcelain Veneers', waitlist:'New / 2027 dates', lead_source:'Website - EPV waitlist'}
+          }}}},relationships:{list:{data:{type:'list',id:LIST}}}}};
+          fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+encodeURIComponent(KID),{method:'POST',headers:{'Content-Type':'application/json','revision':'2024-10-15'},body:JSON.stringify(payload)})
+          .then(function(r){
+            if(r.ok||r.status===202){
+              if(window.fbq){fbq('track','Lead',{content_name:'EPV 2027 Waitlist'});}
+              f.style.display='none'; msg("You're on the list. We'll email you the moment 2027 dates open.",true);
+            } else { b.disabled=false; b.textContent=old; msg('Something went wrong. Please try again.',false); }
+          }).catch(function(){ b.disabled=false; b.textContent=old; msg('Something went wrong. Please try again.',false); });
+        });
+      })();
+      </script>
+    </div>
   </div>
 </section>
 
