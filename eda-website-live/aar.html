@@ -56,7 +56,8 @@ h2{font-weight:800;font-size:clamp(1.7rem,4.2vw,2.6rem);letter-spacing:-0.02em;l
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:#d4ae5c}
 .hero .paren{font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:700;margin-top:14px;color:rgba(244,236,220,.92)}
 .hero .sub{font-size:16.5px;color:rgba(244,236,220,.72);max-width:620px;margin:18px auto 0;text-wrap:pretty}
-.hero-video{position:relative;max-width:720px;margin:34px auto 0;border-radius:10px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.hero-video{position:relative;max-width:340px;margin:34px auto 0;border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.hero-video video{width:100%;aspect-ratio:9/16;height:auto;object-fit:cover;display:block;background:#06101f}
 .hero-video img,.hero-video iframe{width:100%;height:400px;object-fit:cover;display:block;border:0;background:#06101f}
 @media(max-width:640px){.hero-video img,.hero-video iframe{height:220px}}
 .hero-video .play{position:absolute;inset:0;margin:auto;width:76px;height:54px;background:var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:2}
@@ -199,7 +200,7 @@ footer a{color:rgba(244,236,220,.75)}
     <div class="paren">Two days. Fully hands-on. 16 hours of CPD.</div>
     <p class="sub">Occlusal philosophies, vertical dimension, deprogramming and advanced preparation, distilled into a structured system that removes the guesswork from complex cases.</p>
     <div class="hero-video">
-      <img src="assets/aar-hero.jpg" alt="Advanced Aesthetic Rehabilitation masterclass">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/aar-hero-video-poster.jpg"><source src="assets/aar-systems-problem.mp4" type="video/mp4"></video>
     </div>
     <div class="hero-cta">
       <a href="#dates" class="btn gold">Book your seat <span>→</span></a>
