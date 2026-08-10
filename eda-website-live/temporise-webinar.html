@@ -62,6 +62,7 @@ image-slot:empty::after{content:attr(placeholder)}
 @media(max-width:880px){.hero-grid{grid-template-columns:1fr}}
 .hero-brand{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,236,220,.85);margin-bottom:26px}
 .hero-brand span{width:26px;height:26px;border-radius:50%;background:#f4ecdc;color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px}
+.hero-brand img{width:30px;height:30px;border-radius:50%;object-fit:cover;background:#F1ECE0;display:inline-block;vertical-align:middle}
 .hero-pill{display:inline-block;background:rgba(212,174,92,.16);border:1px solid rgba(212,174,92,.5);color:#d4ae5c;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:18px;white-space:nowrap}
 .hero h1{font-weight:800;font-size:clamp(1.9rem,4.6vw,3rem);letter-spacing:-0.02em;line-height:1.08;text-wrap:pretty}
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:#d4ae5c}
@@ -157,7 +158,7 @@ footer b{color:#f4ecdc}
 <header class="hero" data-screen-label="Hero + registration">
   <div class="hero-grid">
     <div>
-      <div class="hero-brand"><span>E</span> Exceptional Dental Academy</div>
+      <div class="hero-brand"><img loading="eager" decoding="async" src="assets/eda-logo-mark-square.jpg" alt="Exceptional Dental Academy"> Exceptional Dental Academy</div>
       <div class="hero-pill">Free online webinar · 1 hr CPD</div>
       <h1>How to Temporise Veneers <em>Step by Step</em></h1>
       <p class="sub">Your provisionals are more than a placeholder. They are how you test aesthetics, function and patient acceptance before the final case. We walk through the protocols we use in practice every week, including the shrink-wrap technique that keeps the papilla intact.</p>
@@ -327,6 +328,22 @@ footer b{color:#f4ecdc}
     <h2>Start with the free webinar.</h2>
     <p class="lede">One hour, one protocol, immediately usable. Register and we'll send your viewing link.</p>
     <a class="btn gold" href="#top" onclick="document.getElementById('gFname').focus();return false">Register free →</a>
+  </div>
+</section>
+
+<!-- EXPLORE OTHER COURSES -->
+<section style="background:#07182F;color:#F4ECDC;padding:60px 22px;text-align:center;">
+  <div style="max-width:960px;margin:0 auto;">
+    <img src="assets/eda-logo-mark-square.jpg" alt="Exceptional Dental Academy" style="width:60px;height:60px;border-radius:14px;object-fit:cover;display:block;margin:0 auto 16px;background:#F4ECDC;">
+    <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D4AE5C;margin-bottom:10px;">Exceptional Dental Academy</div>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin:0 0 8px;color:#F4ECDC;">Explore our other masterclasses</h2>
+    <p style="font-size:15px;color:rgba(244,236,220,.7);margin:0 auto 30px;max-width:520px;">Hands-on clinical training for Australian dentists, taught by clinicians who do this work every week.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;max-width:780px;margin:0 auto;text-align:left;">
+      <a href="/porcelain-veneers" style="display:block;background:rgba(244,236,220,.06);border:1px solid rgba(244,236,220,.2);border-radius:12px;padding:20px;text-decoration:none;"><div style="font-size:16.5px;font-weight:700;color:#F4ECDC;line-height:1.2;">Porcelain Veneers</div><div style="font-size:13px;color:rgba(244,236,220,.6);margin-top:5px;">Two-day hands-on masterclass &rarr;</div></a>
+      <a href="/composite-veneers" style="display:block;background:rgba(244,236,220,.06);border:1px solid rgba(244,236,220,.2);border-radius:12px;padding:20px;text-decoration:none;"><div style="font-size:16.5px;font-weight:700;color:#F4ECDC;line-height:1.2;">Composite Veneers</div><div style="font-size:13px;color:rgba(244,236,220,.6);margin-top:5px;">Two-day hands-on masterclass &rarr;</div></a>
+      <a href="/aesthetic-rehabilitation" style="display:block;background:rgba(244,236,220,.06);border:1px solid rgba(244,236,220,.2);border-radius:12px;padding:20px;text-decoration:none;"><div style="font-size:16.5px;font-weight:700;color:#F4ECDC;line-height:1.2;">Aesthetic Rehabilitation</div><div style="font-size:13px;color:rgba(244,236,220,.6);margin-top:5px;">Two-day hands-on masterclass &rarr;</div></a>
+      <a href="/implants" style="display:block;background:rgba(244,236,220,.06);border:1px solid rgba(244,236,220,.2);border-radius:12px;padding:20px;text-decoration:none;"><div style="font-size:16.5px;font-weight:700;color:#F4ECDC;line-height:1.2;">The Implant Roadmap 101</div><div style="font-size:13px;color:rgba(244,236,220,.6);margin-top:5px;">Three-day hands-on masterclass &rarr;</div></a>
+    </div>
   </div>
 </section>
 
