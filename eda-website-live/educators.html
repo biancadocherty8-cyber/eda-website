@@ -698,6 +698,35 @@ footer {
 </style>
 <style>body{overflow-x:clip;max-width:100vw;}img,image-slot,video,iframe{max-width:100%;}</style>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xbs3nplynm");</script>
+<style>
+.nav-dropdown{position:relative;display:inline-block}
+.nav-dd-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;margin:0;cursor:pointer;
+  font:inherit;font-size:inherit;color:inherit;letter-spacing:inherit}
+.nav-dd-toggle svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s}
+.nav-dropdown.open .nav-dd-toggle svg{transform:rotate(180deg)}
+.nav-dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);
+  min-width:266px;background:#fff;border:1px solid rgba(11,35,69,.12);border-radius:10px;
+  box-shadow:0 24px 60px rgba(7,24,47,.22);padding:8px;display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transition:opacity .16s,transform .16s,visibility .16s;z-index:200}
+.nav-dropdown.open .nav-dd-menu,.nav-dropdown:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-dd-menu a{display:block;padding:10px 14px;border-radius:7px;font-size:14.5px;font-weight:600;
+  color:#0B2345;text-decoration:none;white-space:nowrap;line-height:1.3}
+.nav-dd-menu a:hover,.nav-dd-menu a:focus-visible{background:#F4ECDC;color:#0B2345}
+.nav-dd-menu .nav-dd-all{margin-top:6px;padding-top:12px;border-top:1px solid rgba(11,35,69,.1);
+  font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#96742c;border-radius:0}
+.nav-dd-menu .nav-dd-all:hover{background:transparent;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:860px){ .nav-dropdown{display:none} }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var dd=document.querySelector('.nav-dropdown'); if(!dd) return;
+  var btn=dd.querySelector('.nav-dd-toggle');
+  btn.addEventListener('click',function(e){e.preventDefault();
+    var open=dd.classList.toggle('open'); btn.setAttribute('aria-expanded',open?'true':'false');});
+  document.addEventListener('click',function(e){ if(!dd.contains(e.target)){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+});
+</script>
 </head>
 <body>
 
@@ -708,7 +737,17 @@ footer {
       Exceptional Dental Academy
     </a>
     <div class="nav-links">
-      <a href="index.html#courses">Courses</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dd-toggle" aria-expanded="false" aria-haspopup="true">Courses<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="nav-dd-menu" role="menu">
+          <a href="composite-veneers.html" role="menuitem">Composite Veneer Masterclass</a>
+          <a href="porcelain-veneers.html" role="menuitem">Exceptional Porcelain Veneers</a>
+          <a href="aesthetic-rehabilitation.html" role="menuitem">Advanced Aesthetic Rehabilitation</a>
+          <a href="implants.html" role="menuitem">The Implant Roadmap 101</a>
+          <a href="surgical-extractions.html" role="menuitem">Mastering Surgical Extractions</a>
+          <a href="index.html#courses" role="menuitem" class="nav-dd-all">All masterclasses</a>
+        </div>
+      </div>
       <a href="index.html#results">Results</a>
       <a href="#" class="active">Educators</a>
       <a href="index.html#faq">FAQ</a>
@@ -821,6 +860,21 @@ footer {
           <div class="faculty-foot">
             <span class="teach-pill">Composite Veneers</span>
             <a class="ig" href="https://instagram.com/dr.poyang" target="_blank">@dr.poyang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <div class="faculty-portrait">
+          <image-slot id="faculty-truong" placeholder="Dr. Thao Truong portrait" src="assets/thao-truong-headshot.jpg"><img loading="lazy" decoding="async" src="assets/thao-truong-headshot.jpg" alt="Dr. Thao Truong" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"></image-slot>
+        </div>
+        <div class="faculty-body">
+          <div class="faculty-name">Dr. Thao <em>Truong</em></div>
+          <div class="faculty-role">Specialist Oral Surgeon</div>
+          <p class="faculty-bio">Thao completed a Bachelor of Medical Science with First Class Honours and a Bachelor of Dentistry with Honours at the University of Sydney, then four years of specialist training in Oral Surgery at Sydney Dental Hospital. Her principal private practice is at Sydney Specialist Oral Surgery in Crows Nest, and she works closely with the prosthodontic team at Sydney Prosthodontic Group in Chatswood. She is a Senior Lecturer and Clinical Educator at the University of Sydney School of Dentistry, and a Specialist Visiting Dental Officer at the Nepean Centre for Oral Health.</p>
+          <div class="faculty-creds">BMedSc (Hons I) (USyd) &middot; BDent (Hons) (USyd) &middot; Grad Dip Clin Dent (Surgical) &middot; DClinDent (Oral Surgery)</div>
+          <div class="faculty-foot">
+            <span class="teach-pill">Surgical Extractions</span>
           </div>
         </div>
       </div>
