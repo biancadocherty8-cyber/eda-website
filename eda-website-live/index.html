@@ -1397,7 +1397,9 @@ footer {
 <style>
 .nav-dropdown{position:relative;display:inline-block}
 .nav-dd-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;margin:0;cursor:pointer;
-  font:inherit;font-size:inherit;color:inherit;letter-spacing:inherit}
+  font-family:inherit;font-size:14px;font-weight:500;line-height:inherit;
+  color:rgba(244,236,220,0.78);transition:color .2s}
+.nav-dd-toggle:hover,.nav-dropdown.open .nav-dd-toggle,.nav-dd-toggle:focus-visible{color:#F4ECDC}
 .nav-dd-toggle svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s}
 .nav-dropdown.open .nav-dd-toggle svg{transform:rotate(180deg)}
 .nav-dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);
