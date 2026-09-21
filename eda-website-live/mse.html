@@ -222,6 +222,21 @@ h2{font-weight:800;font-size:clamp(1.7rem,4.2vw,2.6rem);letter-spacing:-0.02em;l
 footer{background:#06101f;color:rgba(244,236,220,.55);font-size:12.5px;text-align:center;padding:26px 22px}
 footer a{color:rgba(244,236,220,.75)}
 </style>
+<style>
+/* mobile pass: the CTA leads, the photo follows */
+@media (max-width: 640px) {
+  .hero .wrap-n { display: flex; flex-direction: column; }
+  .hero-still { order: 8; max-width: 300px; aspect-ratio: 4 / 3; margin-top: 26px; }
+  .hero-cta { order: 7; margin-top: 24px; }
+  .hero-where { order: 9; margin-top: 18px; }
+  .hero { padding: 40px 0 48px; }
+  .hero-brand { margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); line-height: 1.08; }
+  .hero .sub { font-size: 15px; line-height: 1.5; }
+  .hero .btn { width: 100%; }
+  .hero-note { display: block; margin-top: 12px; font-size: 12.5px; line-height: 1.45; }
+}
+</style>
 </head>
 <body>
 
