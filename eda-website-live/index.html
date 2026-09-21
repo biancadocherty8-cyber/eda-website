@@ -1379,6 +1379,13 @@ footer {
   .nav-cta { white-space: nowrap; padding-left: 16px; padding-right: 16px; }
 }
 </style>
+<style>
+/* course names in the cohort list link through to their course page */
+.cohort-name-link { color: inherit; text-decoration: none; }
+.cohort-name-link:hover, .cohort-name-link:focus-visible { color: var(--gold-deep, #96742c); text-decoration: underline; text-underline-offset: 3px; }
+.cohort-banner-link { display: flex; align-items: stretch; flex: 1; min-width: 0; text-decoration: none; color: inherit; }
+@media (max-width: 860px) { .cohort-banner-link { flex-direction: column; } }
+</style>
 </head>
 <body>
 
@@ -1405,7 +1412,7 @@ footer {
     <div class="hero-copy">
       <div class="eyebrow">Hands-on clinical masterclasses · Australia-wide</div>
       <h1 class="hero-h">Predictable systems.<br><em>Exceptional dentistry.</em></h1>
-      <p class="hero-sub">Stop referring out your most profitable cases. Small-cohort, hands-on masterclasses in composite veneers, porcelain veneers, and full-mouth aesthetic rehabilitation. Taught by a faculty of practising clinicians who deliver these cases every week.</p>
+      <p class="hero-sub">Small cohorts. Real cases. Clinicians who do this every week.</p>
       <div class="hero-ctas">
         <a href="#courses" class="btn-gold">Browse Courses <span>→</span></a>
         <a href="#founders" class="btn-ghost">Meet the Educators</a>
@@ -1482,24 +1489,26 @@ footer {
     <!-- NEXT UP -->
     <div class="cohort-tier-label">Next up</div>
     <div class="cohort-banners">
-      <a href="https://www.eventbrite.com.au/e/composite-veneer-masterclass-melbourne-tickets-1990952224699" id="eb-trigger-9" target="_blank" class="cohort-banner">
+      <div class="cohort-banner">
+        <a href="composite-veneers.html" class="cohort-banner-link">
         <div class="cohort-banner-img"><image-slot id="date-img-3" placeholder="Composite veneer case photo" src="assets/epv-melbourne.jpg"><img loading="lazy" decoding="async" src="assets/epv-melbourne.jpg" alt="Composite veneer masterclass in Melbourne" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block;"></image-slot></div>
         <div class="cohort-banner-body">
           <div class="cohort-banner-name">Composite Veneer Masterclass</div>
           <div class="cohort-banner-meta"><strong>Sat 3 &amp; Sun 4 October 2026</strong> · Melbourne · Le Méridien · 9am to 5pm</div>
         </div>
+        </a>
         <div class="cohort-banner-right">
           <span class="cohort-pill pill-fast">Selling fast</span>
-          <span class="cohort-btn">Book seat</span>
+          <a href="https://www.eventbrite.com.au/e/composite-veneer-masterclass-melbourne-tickets-1990952224699" id="eb-trigger-9" target="_blank" class="cohort-btn">Book seat</a>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- LATER IN 2026 -->
     <div class="cohort-tier-label">Later in 2026</div>
     <div class="cohort-list">
       <div class="cohort-row">
-        <div class="cohort-row-name">Exceptional Porcelain Veneers</div>
+        <div class="cohort-row-name"><a href="porcelain-veneers.html" class="cohort-name-link">Exceptional Porcelain Veneers</a></div>
         <div class="cohort-row-meta"><strong>Sat 17 &amp; Sun 18 October</strong> · Hobart, Tasmania</div>
         <div class="cohort-row-right">
           <span class="cohort-row-status"><span class="cohort-pill pill-open">Open</span></span>
@@ -1507,7 +1516,7 @@ footer {
         </div>
       </div>
       <div class="cohort-row">
-        <div class="cohort-row-name">Exceptional Porcelain Veneers</div>
+        <div class="cohort-row-name"><a href="porcelain-veneers.html" class="cohort-name-link">Exceptional Porcelain Veneers</a></div>
         <div class="cohort-row-meta"><strong>Sat 24 &amp; Sun 25 October</strong> · Perth · Four Points by Sheraton</div>
         <div class="cohort-row-right">
           <span class="cohort-row-status"><span class="cohort-pill pill-open">Open</span></span>
@@ -1515,7 +1524,7 @@ footer {
         </div>
       </div>
       <div class="cohort-row">
-        <div class="cohort-row-name">Advanced Aesthetic Rehabilitation</div>
+        <div class="cohort-row-name"><a href="aesthetic-rehabilitation.html" class="cohort-name-link">Advanced Aesthetic Rehabilitation</a></div>
         <div class="cohort-row-meta"><strong>Sat 7 &amp; Sun 8 November</strong> · Melbourne · Le Méridien</div>
         <div class="cohort-row-right">
           <span class="cohort-row-status"><span class="cohort-pill pill-open">New date</span></span>
@@ -1523,7 +1532,7 @@ footer {
         </div>
       </div>
       <div class="cohort-row">
-        <div class="cohort-row-name">Exceptional Porcelain Veneers</div>
+        <div class="cohort-row-name"><a href="porcelain-veneers.html" class="cohort-name-link">Exceptional Porcelain Veneers</a></div>
         <div class="cohort-row-meta"><strong>Sat 21 &amp; Sun 22 November</strong> · Brisbane</div>
         <div class="cohort-row-right">
           <span class="cohort-row-status"><span class="cohort-pill pill-open">Open</span></span>
@@ -1531,7 +1540,7 @@ footer {
         </div>
       </div>
       <div class="cohort-row">
-        <div class="cohort-row-name">The Implant Roadmap 101</div>
+        <div class="cohort-row-name"><a href="/implants" class="cohort-name-link">The Implant Roadmap 101</a></div>
         <div class="cohort-row-meta"><strong>Fri 27 to Sun 29 November</strong> · Chatswood, Sydney</div>
         <div class="cohort-row-right">
           <span class="cohort-row-status"><span class="cohort-pill pill-open">New</span></span>
@@ -1539,7 +1548,7 @@ footer {
         </div>
       </div>
       <div class="cohort-row">
-        <div class="cohort-row-name">Mastering Surgical Extractions</div>
+        <div class="cohort-row-name"><a href="surgical-extractions.html" class="cohort-name-link">Mastering Surgical Extractions</a></div>
         <div class="cohort-row-meta"><strong>Fri 4 &amp; Sat 5 December</strong> · Chatswood, Sydney</div>
         <div class="cohort-row-right">
           <span class="cohort-row-status"><span class="cohort-pill pill-open">New</span></span>
@@ -1547,7 +1556,7 @@ footer {
         </div>
       </div>
       <div class="cohort-row">
-        <div class="cohort-row-name">Composite Veneer Masterclass</div>
+        <div class="cohort-row-name"><a href="composite-veneers.html" class="cohort-name-link">Composite Veneer Masterclass</a></div>
         <div class="cohort-row-meta"><strong>Sat 26 &amp; Sun 27 September</strong> · Sydney</div>
         <div class="cohort-row-right">
           <span class="cohort-row-status"><span class="cohort-pill pill-sold">Sold out</span></span>
