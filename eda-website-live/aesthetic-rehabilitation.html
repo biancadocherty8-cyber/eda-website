@@ -1706,37 +1706,17 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script>
-/* ── Eventbrite embedded checkout ──
-   Each .date-book link carries data-eb-event-id. When the Eventbrite widget
-   script has loaded (live https hosting only), clicking opens the checkout
-   in a modal on this page, visitor never leaves, and a Meta Pixel can see
-   the purchase. If the script hasn't loaded (preview, ad blocker, local
-   file), the link falls through to the normal Eventbrite page. */
-(function () {
-  var s = document.createElement('script');
-  s.src = 'https://www.eventbrite.com.au/static/widgets/eb_widgets.js';
-  s.async = true;
-  document.head.appendChild(s);
-
-  document.querySelectorAll('.date-book[data-eb-event-id]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      if (!window.EBWidgets) return; // fallback: behave as a normal link
-      e.preventDefault();
-      window.EBWidgets.createWidget({
-        widgetType: 'checkout',
-        eventId: link.getAttribute('data-eb-event-id'),
-        modal: true,
-        modalTriggerElementId: null,
-        onOrderComplete: function () {
-          /* Meta Pixel purchase event, uncomment once the Pixel is installed:
-             if (window.fbq) fbq('track', 'Purchase', { currency: 'AUD', value: 3799.99 }); */
-        }
-      });
-    });
-  });
-})();
+/* Eventbrite embedded checkout. Binds each booking link by its element id so
+   the widget owns the click. In-app browsers (Instagram, Facebook) cannot run
+   the modal, so there the link falls through to Eventbrite in the same tab. */
+(function(){var ev=[{id:'eb-aar-1',eid:'1994279854730',name:'Advanced Aesthetic Rehabilitation Melbourne'}];
+var __inApp=/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent||"");
+if(__inApp){ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.setAttribute("target","_self");try{var u=new URL(el.href);u.searchParams.set("utm_source","meta");u.searchParams.set("utm_medium","paid_social");u.searchParams.set("utm_campaign","inapp_booking");el.href=u.toString();}catch(_){}}});return;}
+function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id,onOrderComplete:function(){if(window.fbq)fbq("track","Purchase",{content_name:e.name,content_ids:[e.eid],content_type:"product"});}});}});}go();})();
 </script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="eventbrite.com.au/e/"]');if(a&&window.fbq){fbq('track','InitiateCheckout');}},true);</script>
 
 <div id="video-lightbox" class="video-lightbox" aria-hidden="true">
   <div class="video-lightbox-inner"><button class="video-lightbox-close" aria-label="Close video">&times;</button><div class="video-lightbox-frame"></div><div class="video-lightbox-cap"></div></div>

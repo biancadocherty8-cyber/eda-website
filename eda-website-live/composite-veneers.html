@@ -1663,37 +1663,6 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
-<script>
-/* ── Eventbrite embedded checkout ──
-   Each .date-book link carries data-eb-event-id. When the Eventbrite widget
-   script has loaded (live https hosting only), clicking opens the checkout
-   in a modal on this page, visitor never leaves, and a Meta Pixel can see
-   the purchase. If the script hasn't loaded (preview, ad blocker, local
-   file), the link falls through to the normal Eventbrite page. */
-(function () {
-  var s = document.createElement('script');
-  s.src = 'https://www.eventbrite.com.au/static/widgets/eb_widgets.js';
-  s.async = true;
-  document.head.appendChild(s);
-
-  document.querySelectorAll('.date-book[data-eb-event-id]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      if (!window.EBWidgets) return; // fallback: behave as a normal link
-      e.preventDefault();
-      window.EBWidgets.createWidget({
-        widgetType: 'checkout',
-        eventId: link.getAttribute('data-eb-event-id'),
-        modal: true,
-        modalTriggerElementId: null,
-        onOrderComplete: function () {
-          /* Meta Pixel purchase event, uncomment once the Pixel is installed:
-             if (window.fbq) fbq('track', 'Purchase', { currency: 'AUD', value: 3500 }); */
-        }
-      });
-    });
-  });
-})();
-</script>
 
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
