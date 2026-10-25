@@ -1528,7 +1528,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <div class="logistics-card">
         <h3>Course details</h3>
         <div class="logi-row"><span class="logi-label">Format</span><span class="logi-val">2 days · <em>fully hands-on</em></span></div>
-        <div class="logi-row"><span class="logi-label">Schedule</span><span class="logi-val">Sat–Sun · 9:00am–5:00pm</span></div>
+        <div class="logi-row"><span class="logi-label">Schedule</span><span class="logi-val">Sat to Sun · 9:00am to 5:00pm</span></div>
         <div class="logi-row"><span class="logi-label">Cohort size</span><span class="logi-val">Small group</span></div>
         <div class="logi-row"><span class="logi-label">Technique span</span><span class="logi-val">Monoshade → layered</span></div>
         <div class="logi-row"><span class="logi-label">CPD</span><span class="logi-val">16 hours · certificate</span></div>
@@ -1545,23 +1545,65 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- DATES / BOOK -->
 <section class="dates" id="dates">
   <div class="container">
-    <div class="section-eyebrow">Upcoming cohorts · 2026</div>
-    <h2 class="section-h">Pick your city. <em>Lock in your seat.</em></h2>
-    <p class="section-lede">CVM runs in Sydney and Melbourne across 2026. Cohorts are kept small and the earlier dates fill first, booking goes through Eventbrite.</p>
+    <div class="section-eyebrow">Next cohort &middot; 2027</div>
+    <h2 class="section-h">2027 dates are being set. <em>Get first access.</em></h2>
+    <p class="section-lede">Both 2026 Composite Veneer Masterclass cohorts have now run. Cohorts are kept small and the earlier dates fill first, so the waitlist is where new dates are released before anywhere else.</p>
 
-    <div class="dates-list">
-      <div class="date-row">
-        <div class="date-city">Sydney</div>
-        <div class="date-when"><strong>Sat 26 &amp; Sun 27 September 2026</strong> · 9:00am start · 2 days</div>
-        <span class="date-status status-sold">Sold out</span>
-        <a class="date-book date-book-disabled" aria-disabled="true">Sold out</a>
+    <div class="wl-band">
+      <style>
+        .wl-band{margin:34px auto 0;max-width:680px}
+        .wl-card{background:#0B2345;border:1px solid rgba(212,174,92,.35);border-radius:14px;padding:30px 28px;text-align:center;color:#f4ecdc;box-shadow:0 20px 50px rgba(11,35,69,.18)}
+        .wl-eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d4ae5c;margin-bottom:10px}
+        .wl-card h3{font-weight:800;font-size:clamp(1.3rem,3.2vw,1.7rem);letter-spacing:-0.01em;line-height:1.15;color:#fff;margin:0}
+        .wl-card p{font-size:14.5px;color:rgba(244,236,220,.75);margin:10px auto 20px;max-width:460px}
+        .wl-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:520px;margin:0 auto}
+        .wl-form input{flex:1 1 180px;min-width:0;padding:13px 14px;border:1px solid rgba(255,255,255,.18);border-radius:6px;font-family:inherit;font-size:15.5px;color:#fff;background:rgba(255,255,255,.06)}
+        .wl-form input::placeholder{color:rgba(244,236,220,.55)}
+        .wl-form input:focus{outline:2px solid #d4ae5c;background:rgba(255,255,255,.1)}
+        .wl-form button{flex:0 0 auto;background:#d4ae5c;color:#0B2345;font-family:inherit;font-weight:800;font-size:15.5px;padding:13px 24px;border:none;border-radius:6px;cursor:pointer;transition:background .15s,transform .15s}
+        .wl-form button:hover{background:#c39a44;transform:translateY(-1px)}
+        .wl-form button:disabled{opacity:.6;cursor:default;transform:none}
+        .wl-msg{font-size:14px;margin-top:16px;font-weight:600;display:none}
+        .wl-msg.show{display:block}
+        .wl-msg.ok{color:#9be15d}
+        .wl-msg.err{color:#f3b0b0}
+        .wl-note{font-size:11.5px;color:rgba(244,236,220,.5);margin-top:12px;letter-spacing:.02em}
+        @media(max-width:480px){.wl-form button{flex:1 1 100%}}
+      </style>
+      <div class="wl-card">
+        <div class="wl-eyebrow">2027 dates</div>
+        <h3>Be first in line for the next cohort.</h3>
+        <p>We will email you as soon as 2027 Composite Veneer Masterclass dates open. No spam, unsubscribe any time.</p>
+        <form class="wl-form" id="wlForm" novalidate>
+          <input type="text" id="wlName" placeholder="First name" autocomplete="given-name" aria-label="First name">
+          <input type="email" id="wlEmail" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
+          <button type="submit" id="wlBtn">Join the waitlist</button>
+        </form>
+        <div class="wl-msg" id="wlMsg" role="status"></div>
+        <div class="wl-note">You'll only hear from us about new CVM dates.</div>
       </div>
-      <div class="date-row">
-        <div class="date-city">Melbourne</div>
-        <div class="date-when"><strong>Sat 3 &amp; Sun 4 October 2026</strong> · 9:00am start · 2 days · Le Méridien, Melbourne</div>
-        <span class="date-status status-open">Open</span>
-        <a href="https://www.eventbrite.com.au/e/composite-veneer-masterclass-melbourne-tickets-1990952224699" id="eb-cvm-1" target="_blank" class="date-book" data-eb-event-id="1990952224699">Book seat</a>
-      </div>
+      <script>
+      (function(){
+        var KID='RqySRe', LIST='XgEAAe';
+        var f=document.getElementById('wlForm'), em=document.getElementById('wlEmail'), nm=document.getElementById('wlName'), b=document.getElementById('wlBtn'), m=document.getElementById('wlMsg');
+        function msg(t,ok){m.textContent=t;m.className='wl-msg show '+(ok?'ok':'err');}
+        f.addEventListener('submit',function(e){
+          e.preventDefault();
+          if(!/.+@.+\..+/.test(em.value.trim())){msg('Please enter a valid email.',false);return;}
+          b.disabled=true; var old=b.textContent; b.textContent='Adding you...';
+          var payload={data:{type:'subscription',attributes:{profile:{data:{type:'profile',attributes:{
+            email:em.value.trim(), first_name:nm.value.trim(),
+            properties:{course:'Composite Veneer Masterclass', waitlist:'New / 2027 dates', lead_source:'Website - CVM waitlist'}
+          }}}},relationships:{list:{data:{type:'list',id:LIST}}}}};
+          fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+encodeURIComponent(KID),{method:'POST',headers:{'Content-Type':'application/json','revision':'2024-10-15'},body:JSON.stringify(payload)})
+          .then(function(r){
+            if(r.ok){f.style.display='none';msg("You're on the list. We'll be in touch when 2027 dates open.",true);}
+            else{b.disabled=false;b.textContent=old;msg('Something went wrong. Please email info@exceptionaldentalacademy.com',false);}
+          })
+          .catch(function(){b.disabled=false;b.textContent=old;msg('Something went wrong. Please email info@exceptionaldentalacademy.com',false);});
+        });
+      })();
+      </script>
     </div>
   </div>
 </section>
@@ -1666,7 +1708,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-<script>(function(){var ev=[{id:'eb-cvm-1',eid:'1990952224699',name:'Composite Melbourne'}];var __inApp=/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent||"");if(__inApp){ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.setAttribute("target","_self");try{var u=new URL(el.href);u.searchParams.set("utm_source","meta");u.searchParams.set("utm_medium","paid_social");u.searchParams.set("utm_campaign","inapp_booking");el.href=u.toString();}catch(_){}}});return;}function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id});}});}go();})();</script>
+<script>(function(){var ev=[];var __inApp=/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent||"");if(__inApp){ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.setAttribute("target","_self");try{var u=new URL(el.href);u.searchParams.set("utm_source","meta");u.searchParams.set("utm_medium","paid_social");u.searchParams.set("utm_campaign","inapp_booking");el.href=u.toString();}catch(_){}}});return;}function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id});}});}go();})();</script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="eventbrite.com.au/e/"]');if(a&&window.fbq){fbq('track','InitiateCheckout');}},true);</script>
 </body>
 </html>
