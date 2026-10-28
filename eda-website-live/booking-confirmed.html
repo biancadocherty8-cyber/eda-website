@@ -48,6 +48,12 @@ ol li{counter-increment:step;position:relative;padding-left:40px;margin-bottom:1
 ol li::before{content:counter(step);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--bone);color:var(--navy);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
 ol li strong{color:var(--ink);font-weight:600}
 
+.multi{background:var(--bone);border-radius:11px;padding:20px 22px;margin-bottom:30px}
+.multi strong{display:block;font-size:15px;color:var(--navy);margin-bottom:5px}
+.multi p{font-size:14px;color:var(--ink-soft);margin-bottom:12px}
+.multi a{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;background:var(--navy);color:var(--cream);font-size:14.5px;font-weight:600;border-radius:7px}
+.multi a:hover{background:var(--navy-deep);text-decoration:none;color:#fff}
+
 .help{border-top:1px solid var(--rule);padding-top:24px;font-size:14px;color:var(--ink-soft)}
 .help a{font-weight:600}
 
@@ -93,6 +99,12 @@ ol li strong{color:var(--ink);font-weight:600}
     <li><strong>A reminder</strong> lands the week before with everything you need on the day.</li>
   </ol>
 
+  <div class="multi">
+    <strong>Booked seats for colleagues?</strong>
+    <p>Tell us who is coming and we will have their certificates, name badges and catering ready on the day.</p>
+    <a href="add-delegates.html" id="delegatesLink">Add your delegates</a>
+  </div>
+
   <div class="help">
     Nothing in your inbox after an hour? Check your spam folder first, then email us at
     <a href="mailto:info@exceptionaldentalacademy.com">info@exceptionaldentalacademy.com</a>
@@ -121,22 +133,10 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=996591033040692&ev=PageView&noscript=1"></noscript>
 
+<script src="assets/cohorts.js"></script>
 <script>
 (function(){
-  /* Cohort lookup. Add one entry per Stripe Payment Link.
-     The link's success URL is:  https://exceptionaldentalacademy.com/booking-confirmed?c=<key>
-     Keys are lowercase, no spaces. Keep "value" as the GST-inclusive price in AUD. */
-  var COHORTS = {
-    /* 2027 cohorts go here, for example:
-    'aar-syd-mar27': {
-      name:  'Advanced Aesthetic Rehabilitation',
-      city:  'Sydney',
-      venue: 'ACDP, Sydney',
-      dates: 'Sat 13 & Sun 14 March 2027',
-      value: 3500
-    },
-    */
-  };
+  var COHORTS = window.EDA_COHORTS || {};
 
   function param(k){
     try { return new URLSearchParams(window.location.search).get(k); }
@@ -148,6 +148,10 @@ src="https://www.facebook.com/tr?id=996591033040692&ev=PageView&noscript=1"></no
 
   var nameEl = document.getElementById('courseName');
   var metaEl = document.getElementById('courseMeta');
+
+  /* Carry the cohort code through so the delegate form knows which course. */
+  var dl = document.getElementById('delegatesLink');
+  if (dl && key) dl.href = 'add-delegates.html?c=' + encodeURIComponent(key);
 
   if (c) {
     nameEl.textContent = c.name;

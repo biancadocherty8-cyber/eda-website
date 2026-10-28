@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Add your delegates · Exceptional Dental Academy</title>
+<meta name="description" content="Tell us who is attending so we can prepare certificates and catering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2345; --navy-deep:#07182F; --gold:#D4AE5C; --gold-deep:#B8923F;
+  --cream:#F4ECDC; --paper:#F4F0E6; --bone:#ECE6D7; --ink:#0E1626;
+  --ink-soft:#3f3b34; --ink-faded:#8B8475; --rule:#DED7C5; --err:#B3261E;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--gold-deep)}
+
+.bar{background:var(--navy);color:var(--cream);padding:16px 6vw;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.bar .wm{font-weight:600;letter-spacing:.22em;font-size:11px;text-transform:uppercase}
+.bar a{color:var(--cream);font-size:12px;letter-spacing:.04em;text-decoration:none;flex:0 0 auto}
+.bar a:hover{color:var(--gold)}
+
+.wrap{max-width:680px;margin:0 auto;padding:48px 22px 70px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(32px,6.5vw,44px);color:var(--navy);line-height:1.07;margin-bottom:14px}
+.lede{font-size:16px;color:var(--ink-soft);margin-bottom:12px}
+.cohort{display:inline-block;background:var(--bone);border-radius:6px;padding:7px 13px;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:30px}
+
+fieldset{border:1px solid var(--rule);border-radius:12px;background:#fff;padding:22px 20px;margin-bottom:16px}
+legend{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faded);padding:0 8px}
+.row{margin-bottom:14px}
+.row:last-child{margin-bottom:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px}
+label .opt{font-weight:400;color:var(--ink-faded)}
+input{width:100%;padding:12px 13px;border:1px solid var(--rule);border-radius:7px;font-family:inherit;font-size:16px;color:var(--ink);background:#fff}
+input:focus{outline:2px solid var(--gold);outline-offset:-1px;border-color:transparent}
+input[aria-invalid="true"]{border-color:var(--err)}
+.field-err{font-size:12.5px;color:var(--err);margin-top:4px;display:none}
+.field-err.show{display:block}
+
+.addbtn{background:none;border:1px dashed var(--rule);border-radius:9px;width:100%;min-height:48px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--navy);cursor:pointer;margin-bottom:22px}
+.addbtn:hover{border-color:var(--gold-deep);color:var(--gold-deep)}
+.addbtn[disabled]{opacity:.45;cursor:default}
+
+.removebtn{background:none;border:0;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-faded);cursor:pointer;padding:6px 0;text-decoration:underline}
+.removebtn:hover{color:var(--err)}
+
+.submit{display:block;width:100%;min-height:52px;background:var(--navy);color:var(--cream);font-family:inherit;font-weight:700;font-size:16px;border:0;border-radius:8px;cursor:pointer}
+.submit:hover{background:var(--navy-deep)}
+.submit[disabled]{opacity:.6;cursor:default}
+
+.note{font-size:12.5px;color:var(--ink-faded);margin-top:14px}
+.status{display:none;margin-top:18px;padding:14px 16px;border-radius:9px;font-size:14.5px;font-weight:600}
+.status.show{display:block}
+.status.err{background:#FBE9E7;color:var(--err)}
+
+.done{display:none}
+.done.show{display:block}
+.done .tick{width:58px;height:58px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.done .tick svg{width:28px;height:28px;stroke:var(--gold);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+.foot{background:var(--navy);color:rgba(244,236,220,.7);text-align:center;padding:24px 22px;font-size:12px}
+.foot a{color:var(--gold);text-decoration:none}
+
+@media (max-width:560px){
+  .wrap{padding:36px 20px 56px}
+  .two{grid-template-columns:1fr}
+  fieldset{padding:20px 17px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span class="wm">Exceptional Dental Academy</span>
+  <a href="index.html">&larr; Back to home</a>
+</div>
+
+<div class="wrap">
+
+  <div id="formView">
+    <div class="eyebrow">Practice bookings</div>
+    <h1>Who is attending?</h1>
+    <p class="lede">You booked more than one seat. Tell us who is coming and we will have their certificates, name badges and catering ready on the day.</p>
+    <div class="cohort" id="cohortChip">Your course</div>
+
+    <form id="delForm" novalidate>
+
+      <fieldset>
+        <legend>Who booked</legend>
+        <div class="row two">
+          <div>
+            <label for="byName">Your name</label>
+            <input type="text" id="byName" autocomplete="name" required>
+            <div class="field-err" id="err-byName">Please enter your name.</div>
+          </div>
+          <div>
+            <label for="byEmail">Your email</label>
+            <input type="email" id="byEmail" autocomplete="email" required>
+            <div class="field-err" id="err-byEmail">Please enter a valid email.</div>
+          </div>
+        </div>
+        <div class="row">
+          <label for="practice">Practice name <span class="opt">(optional)</span></label>
+          <input type="text" id="practice" autocomplete="organization">
+        </div>
+      </fieldset>
+
+      <div id="delegates"></div>
+
+      <button type="button" class="addbtn" id="addBtn">+ Add another delegate</button>
+
+      <button type="submit" class="submit" id="submitBtn">Send delegate details</button>
+      <div class="status" id="status" role="status"></div>
+      <p class="note">We use these details for certificates, name badges and catering, and to email each delegate their joining instructions for this course. We will not add anyone to our marketing list.</p>
+    </form>
+  </div>
+
+  <div class="done" id="doneView">
+    <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 7"/></svg></div>
+    <div class="eyebrow">Received</div>
+    <h1>Thank you.</h1>
+    <p class="lede" id="doneMsg">We have your delegates. Each of them will get their joining instructions before the course, and we will have everything ready on the day.</p>
+    <p class="lede">Something not right? Email <a href="mailto:info@exceptionaldentalacademy.com">info@exceptionaldentalacademy.com</a> and we will fix it.</p>
+  </div>
+
+</div>
+
+<div class="foot">
+  &copy; 2026 Exceptional Dental Academy &middot; <a href="index.html">Home</a> &middot; <a href="policies.html">Policies</a>
+</div>
+
+<script src="assets/cohorts.js"></script>
+<script>
+(function(){
+  var KLAVIYO_COMPANY_ID = 'RqySRe';
+  var MAX_DELEGATES = 5;
+
+  function param(k){
+    try { return new URLSearchParams(window.location.search).get(k); }
+    catch(e){ return null; }
+  }
+  var key = (param('c') || '').toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,40);
+  var COHORTS = window.EDA_COHORTS || {};
+  var cohort = Object.prototype.hasOwnProperty.call(COHORTS, key) ? COHORTS[key] : null;
+
+  var chip = document.getElementById('cohortChip');
+  if (cohort) {
+    chip.textContent = [cohort.name, cohort.city, cohort.dates].filter(Boolean).join(' · ');
+  } else {
+    chip.textContent = 'Please tell us which course in your email if this looks wrong';
+  }
+
+  /* ---------- delegate rows ---------- */
+  var wrap = document.getElementById('delegates');
+  var addBtn = document.getElementById('addBtn');
+  var count = 0;
+
+  function addRow(){
+    if (count >= MAX_DELEGATES) return;
+    count++;
+    var n = count;
+    var fs = document.createElement('fieldset');
+    fs.className = 'delegate';
+    fs.innerHTML =
+      '<legend>Delegate ' + n + '</legend>' +
+      '<div class="row two">' +
+        '<div><label for="d'+n+'first">First name</label>' +
+        '<input type="text" id="d'+n+'first" data-f="first" autocomplete="off">' +
+        '<div class="field-err">Please enter a first name.</div></div>' +
+        '<div><label for="d'+n+'last">Last name</label>' +
+        '<input type="text" id="d'+n+'last" data-f="last" autocomplete="off"></div>' +
+      '</div>' +
+      '<div class="row"><label for="d'+n+'email">Email</label>' +
+        '<input type="email" id="d'+n+'email" data-f="email" autocomplete="off">' +
+        '<div class="field-err">Please enter a valid email.</div></div>' +
+      '<div class="row two">' +
+        '<div><label for="d'+n+'ahpra">AHPRA number <span class="opt">(optional)</span></label>' +
+        '<input type="text" id="d'+n+'ahpra" data-f="ahpra" autocomplete="off"></div>' +
+        '<div><label for="d'+n+'diet">Dietary requirements <span class="opt">(optional)</span></label>' +
+        '<input type="text" id="d'+n+'diet" data-f="diet" autocomplete="off"></div>' +
+      '</div>';
+    if (n > 1) {
+      var rm = document.createElement('button');
+      rm.type = 'button'; rm.className = 'removebtn'; rm.textContent = 'Remove this delegate';
+      rm.addEventListener('click', function(){ fs.remove(); renumber(); });
+      fs.appendChild(rm);
+    }
+    wrap.appendChild(fs);
+    renumber();
+  }
+
+  function renumber(){
+    var rows = wrap.querySelectorAll('fieldset.delegate');
+    count = rows.length;
+    Array.prototype.forEach.call(rows, function(fs, i){
+      fs.querySelector('legend').textContent = 'Delegate ' + (i+1);
+    });
+    addBtn.disabled = count >= MAX_DELEGATES;
+    addBtn.textContent = count >= MAX_DELEGATES
+      ? 'Maximum ' + MAX_DELEGATES + ' delegates on this form'
+      : '+ Add another delegate';
+  }
+
+  addBtn.addEventListener('click', addRow);
+  addRow();
+
+  /* ---------- validation + submit ---------- */
+  var form = document.getElementById('delForm');
+  var btn = document.getElementById('submitBtn');
+  var statusEl = document.getElementById('status');
+
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  function flag(input, bad){
+    input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+    var e = input.parentNode.querySelector('.field-err');
+    if (e) e.classList.toggle('show', !!bad);
+    return !bad;
+  }
+
+  function collect(){
+    var ok = true;
+    var byName  = document.getElementById('byName');
+    var byEmail = document.getElementById('byEmail');
+    if (!flag(byName, !byName.value.trim())) ok = false;
+    if (!flag(byEmail, !isEmail(byEmail.value.trim()))) ok = false;
+
+    var out = [];
+    var rows = wrap.querySelectorAll('fieldset.delegate');
+    Array.prototype.forEach.call(rows, function(fs){
+      function g(f){ return fs.querySelector('[data-f="'+f+'"]'); }
+      var first = g('first'), email = g('email');
+      if (!flag(first, !first.value.trim())) ok = false;
+      if (!flag(email, !isEmail(email.value.trim()))) ok = false;
+      out.push({
+        first: first.value.trim(),
+        last:  g('last').value.trim(),
+        email: email.value.trim(),
+        ahpra: g('ahpra').value.trim(),
+        diet:  g('diet').value.trim()
+      });
+    });
+
+    if (!out.length) ok = false;
+    return ok ? {
+      byName: byName.value.trim(),
+      byEmail: byEmail.value.trim(),
+      practice: document.getElementById('practice').value.trim(),
+      delegates: out
+    } : null;
+  }
+
+  function send(d, data){
+    /* Client events create a profile without subscribing it to marketing,
+       which is the point: a colleague booked by someone else never opted in. */
+    var body = { data: { type: 'event', attributes: {
+      metric: { data: { type: 'metric', attributes: { name: 'Delegate Registered' } } },
+      properties: {
+        cohort_code: key || 'unknown',
+        course: cohort ? cohort.name : 'Unknown course',
+        city:   cohort ? (cohort.city || '') : '',
+        dates:  cohort ? (cohort.dates || '') : '',
+        venue:  cohort ? (cohort.venue || '') : '',
+        ahpra_number: d.ahpra,
+        dietary_requirements: d.diet,
+        practice_name: data.practice,
+        booked_by_name: data.byName,
+        booked_by_email: data.byEmail,
+        delegate_count: data.delegates.length
+      },
+      profile: { data: { type: 'profile', attributes: {
+        email: d.email, first_name: d.first, last_name: d.last,
+        properties: {
+          ahpra_number: d.ahpra,
+          practice_name: data.practice,
+          lead_source: 'Website - practice delegate form'
+        }
+      } } }
+    } } };
+
+    return fetch('https://a.klaviyo.com/client/events/?company_id=' + encodeURIComponent(KLAVIYO_COMPANY_ID), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'revision': '2024-10-15' },
+      body: JSON.stringify(body)
+    }).then(function(r){
+      if (!r.ok) throw new Error('Klaviyo ' + r.status);
+      return true;
+    });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    statusEl.className = 'status';
+
+    var data = collect();
+    if (!data) {
+      statusEl.textContent = 'Please check the highlighted fields.';
+      statusEl.className = 'status show err';
+      var bad = form.querySelector('[aria-invalid="true"]');
+      if (bad) bad.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    var old = btn.textContent;
+    btn.textContent = 'Sending...';
+
+    Promise.all(data.delegates.map(function(d){ return send(d, data); }))
+      .then(function(){
+        document.getElementById('formView').style.display = 'none';
+        var n = data.delegates.length;
+        document.getElementById('doneMsg').textContent =
+          'We have ' + n + (n === 1 ? ' delegate' : ' delegates') +
+          ' on file. Each of them will get their joining instructions before the course, and we will have everything ready on the day.';
+        document.getElementById('doneView').classList.add('show');
+        window.scrollTo(0,0);
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = old;
+        statusEl.innerHTML = 'We could not save that. Please email your delegates’ details to ' +
+          '<a href="mailto:info@exceptionaldentalacademy.com">info@exceptionaldentalacademy.com</a> and we will add them.';
+        statusEl.className = 'status show err';
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
