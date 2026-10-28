@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Booking confirmed · Exceptional Dental Academy</title>
+<meta name="description" content="Your seat is confirmed. Here is what happens next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2345; --navy-deep:#07182F; --gold:#D4AE5C; --gold-deep:#B8923F;
+  --cream:#F4ECDC; --paper:#F4F0E6; --bone:#ECE6D7; --ink:#0E1626;
+  --ink-soft:#3f3b34; --ink-faded:#8B8475; --rule:#DED7C5;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--gold-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.bar{background:var(--navy);color:var(--cream);padding:16px 6vw;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.bar .wm{font-weight:600;letter-spacing:.22em;font-size:11px;text-transform:uppercase}
+.bar a{color:var(--cream);font-size:12px;letter-spacing:.04em;flex:0 0 auto}
+.bar a:hover{color:var(--gold)}
+
+.wrap{max-width:660px;margin:0 auto;padding:52px 22px 70px}
+
+.tick{width:62px;height:62px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:26px}
+.tick svg{width:30px;height:30px;stroke:var(--gold);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,7vw,46px);color:var(--navy);line-height:1.06;margin-bottom:14px}
+.lede{font-size:16px;color:var(--ink-soft);margin-bottom:34px}
+
+.card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:26px 24px;margin-bottom:34px}
+.card-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:8px}
+.card h2{font-family:var(--serif);font-weight:600;font-size:clamp(22px,4.6vw,27px);color:var(--navy);line-height:1.15;margin-bottom:10px}
+.card .meta{font-size:14.5px;color:var(--ink-soft)}
+.card .meta span{display:block;margin-top:3px}
+
+h3{font-family:var(--serif);font-weight:600;font-size:23px;color:var(--navy);margin-bottom:14px}
+ol{margin:0 0 34px 0;padding:0;list-style:none;counter-reset:step}
+ol li{counter-increment:step;position:relative;padding-left:40px;margin-bottom:16px;font-size:14.5px;color:var(--ink-soft)}
+ol li::before{content:counter(step);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--bone);color:var(--navy);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+ol li strong{color:var(--ink);font-weight:600}
+
+.help{border-top:1px solid var(--rule);padding-top:24px;font-size:14px;color:var(--ink-soft)}
+.help a{font-weight:600}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--navy);color:var(--cream);font-weight:600;font-size:15px;padding:0 26px;border-radius:7px;margin-top:26px}
+.btn:hover{background:var(--navy-deep);text-decoration:none;color:#fff}
+
+.foot{background:var(--navy);color:rgba(244,236,220,.7);text-align:center;padding:24px 22px;font-size:12px}
+.foot a{color:var(--gold)}
+
+@media (max-width:520px){
+  .wrap{padding:38px 20px 56px}
+  .card{padding:22px 20px}
+  .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span class="wm">Exceptional Dental Academy</span>
+  <a href="index.html">&larr; Back to home</a>
+</div>
+
+<div class="wrap">
+  <div class="tick" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 7"/></svg>
+  </div>
+
+  <div class="eyebrow">Payment received</div>
+  <h1>Your seat is confirmed.</h1>
+  <p class="lede" id="lede">Thank you. We have your booking and a receipt is on its way to your inbox.</p>
+
+  <div class="card">
+    <div class="card-label">You are booked for</div>
+    <h2 id="courseName">Your course</h2>
+    <div class="meta" id="courseMeta"></div>
+  </div>
+
+  <h3>What happens next</h3>
+  <ol>
+    <li><strong>A receipt and tax invoice</strong> arrives by email within a few minutes. It shows GST and our ABN, so you can claim the course as a business expense.</li>
+    <li><strong>Joining instructions</strong> follow separately: venue address, start and finish times, parking, and what to bring.</li>
+    <li><strong>A reminder</strong> lands the week before with everything you need on the day.</li>
+  </ol>
+
+  <div class="help">
+    Nothing in your inbox after an hour? Check your spam folder first, then email us at
+    <a href="mailto:info@exceptionaldentalacademy.com">info@exceptionaldentalacademy.com</a>
+    and we will sort it out.
+    <br><br>
+    Need to transfer or cancel? Our <a href="policies.html#refund">cancellation terms</a> set out how that works.
+  </div>
+
+  <a class="btn" href="index.html">Back to Exceptional Dental Academy</a>
+</div>
+
+<div class="foot">
+  &copy; 2026 Exceptional Dental Academy &middot; <a href="index.html">Home</a> &middot; <a href="policies.html">Policies</a>
+</div>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','996591033040692');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=996591033040692&ev=PageView&noscript=1"></noscript>
+
+<script>
+(function(){
+  /* Cohort lookup. Add one entry per Stripe Payment Link.
+     The link's success URL is:  https://exceptionaldentalacademy.com/booking-confirmed?c=<key>
+     Keys are lowercase, no spaces. Keep "value" as the GST-inclusive price in AUD. */
+  var COHORTS = {
+    /* 2027 cohorts go here, for example:
+    'aar-syd-mar27': {
+      name:  'Advanced Aesthetic Rehabilitation',
+      city:  'Sydney',
+      venue: 'ACDP, Sydney',
+      dates: 'Sat 13 & Sun 14 March 2027',
+      value: 3500
+    },
+    */
+  };
+
+  function param(k){
+    try { return new URLSearchParams(window.location.search).get(k); }
+    catch(e){ return null; }
+  }
+
+  var key = (param('c') || '').toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,40);
+  var c   = Object.prototype.hasOwnProperty.call(COHORTS, key) ? COHORTS[key] : null;
+
+  var nameEl = document.getElementById('courseName');
+  var metaEl = document.getElementById('courseMeta');
+
+  if (c) {
+    nameEl.textContent = c.name;
+    var bits = [];
+    if (c.dates) bits.push(c.dates);
+    if (c.venue) bits.push(c.venue);
+    else if (c.city) bits.push(c.city);
+    metaEl.innerHTML = bits.map(function(b){
+      return '<span>' + b.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</span>';
+    }).join('');
+  } else {
+    /* Unknown or missing code: stay useful rather than showing a broken card. */
+    nameEl.textContent = 'Your Exceptional Dental Academy course';
+    metaEl.innerHTML = '<span>Full details are in the confirmation email we have just sent you.</span>';
+  }
+
+  /* Purchase event for ad attribution. Fires only for a known cohort so the
+     reported value is one we set, not one typed into the address bar. */
+  if (c && window.fbq) {
+    fbq('track','Purchase', {
+      value: c.value,
+      currency: 'AUD',
+      content_name: c.name + (c.city ? ' ' + c.city : ''),
+      content_ids: [key],
+      content_type: 'product'
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
