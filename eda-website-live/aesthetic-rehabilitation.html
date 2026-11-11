@@ -1350,20 +1350,20 @@ document.addEventListener('DOMContentLoaded',function(){
       <div class="aud aud-mof">
         <div class="eyebrow">You know EDA · here's your next cohort</div>
         <h1 class="hero-h">Small cohorts. <em>The early dates fill first.</em></h1>
-        <p class="hero-sub">You've seen the work. AAR is the full rehabilitation system, occlusion to definitive delivery, taught by clinicians who manage these cases every week. Melbourne is the final 2026 cohort, capped tight, and <strong style="color:var(--cream);font-weight:700">full refund up to 30 days out</strong>, so you can book now and decide later.</p>
+        <p class="hero-sub">You've seen the work. AAR is the full rehabilitation system, occlusion to definitive delivery, taught by clinicians who manage these cases every week. Both 2026 cohorts have run. 2027 dates open to the waitlist first, and places in the earlier cohorts go quickly.</p>
         <div class="hero-ctas">
           <a href="#dates" class="btn-gold">Secure your seat <span>→</span></a>
           <a href="#results" class="btn-ghost">See graduate results</a>
         </div>
         <div class="hero-urgency">
           <span class="hero-urgency-dot"></span>
-          Melbourne is the final AAR cohort for 2026.
+          Both 2026 cohorts have run. 2027 dates open to the waitlist first.
         </div>
       </div>
 
       <div class="hero-cities">
-        <div class="hero-cities-label">2026 cohorts · tap a city to book</div>
-        <a href="#dates" class="city-pill"><span>●</span> Melbourne <em>7-8 Nov</em></a>
+        <div class="hero-cities-label">2027 cohorts &middot; join the waitlist for first access</div>
+        <a href="#dates" class="city-pill"><span>●</span> 2027 dates <em>Waitlist open</em></a>
       </div>
     </div>
 
@@ -1660,17 +1660,65 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- DATES / BOOK -->
 <section class="dates" id="dates">
   <div class="container">
-    <div class="section-eyebrow">Upcoming cohorts · 2026</div>
-    <h2 class="section-h">Pick your city. <em>Lock in your seat.</em></h2>
-    <p class="section-lede">Sydney ran in June. Melbourne is the final AAR cohort for 2026, held at Le Méridien Melbourne. Cohorts are kept small, booking goes through Eventbrite.</p>
+    <div class="section-eyebrow">Next cohort &middot; 2027</div>
+    <h2 class="section-h">2027 dates are being set. <em>Get first access.</em></h2>
+    <p class="section-lede">Sydney and Melbourne have both run in 2026. Cohorts are kept small and the earlier dates fill first, so the waitlist is where new dates are released before anywhere else.</p>
 
-    <div class="dates-list">
-      <div class="date-row">
-        <div class="date-city">Melbourne <em>Le Méridien</em></div>
-        <div class="date-when"><strong>Sat 7 &amp; Sun 8 November 2026</strong> · 9:00am start · 2 days</div>
-        <span class="date-status status-open">Final seats</span>
-        <a href="https://www.eventbrite.com.au/e/advanced-aesthetic-rehabilitation-aar-melbourne-tickets-1994279854730" id="eb-aar-1" target="_blank" class="date-book" data-eb-event-id="1994279854730">Book seat</a>
+    <div class="wl-band">
+      <style>
+        .wl-band{margin:34px auto 0;max-width:680px}
+        .wl-card{background:#0B2345;border:1px solid rgba(212,174,92,.35);border-radius:14px;padding:30px 28px;text-align:center;color:#f4ecdc;box-shadow:0 20px 50px rgba(11,35,69,.18)}
+        .wl-eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d4ae5c;margin-bottom:10px}
+        .wl-card h3{font-weight:800;font-size:clamp(1.3rem,3.2vw,1.7rem);letter-spacing:-0.01em;line-height:1.15;color:#fff;margin:0}
+        .wl-card p{font-size:14.5px;color:rgba(244,236,220,.75);margin:10px auto 20px;max-width:460px}
+        .wl-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:520px;margin:0 auto}
+        .wl-form input{flex:1 1 180px;min-width:0;padding:13px 14px;border:1px solid rgba(255,255,255,.18);border-radius:6px;font-family:inherit;font-size:15.5px;color:#fff;background:rgba(255,255,255,.06)}
+        .wl-form input::placeholder{color:rgba(244,236,220,.55)}
+        .wl-form input:focus{outline:2px solid #d4ae5c;background:rgba(255,255,255,.1)}
+        .wl-form button{flex:0 0 auto;background:#d4ae5c;color:#0B2345;font-family:inherit;font-weight:800;font-size:15.5px;padding:13px 24px;border:none;border-radius:6px;cursor:pointer;transition:background .15s,transform .15s}
+        .wl-form button:hover{background:#c39a44;transform:translateY(-1px)}
+        .wl-form button:disabled{opacity:.6;cursor:default;transform:none}
+        .wl-msg{font-size:14px;margin-top:16px;font-weight:600;display:none}
+        .wl-msg.show{display:block}
+        .wl-msg.ok{color:#9be15d}
+        .wl-msg.err{color:#f3b0b0}
+        .wl-note{font-size:11.5px;color:rgba(244,236,220,.5);margin-top:12px;letter-spacing:.02em}
+        @media(max-width:480px){.wl-form button{flex:1 1 100%}}
+      </style>
+      <div class="wl-card">
+        <div class="wl-eyebrow">2027 dates</div>
+        <h3>Be first in line for the next cohort.</h3>
+        <p>We will email you as soon as 2027 Advanced Aesthetic Rehabilitation dates open. No spam, unsubscribe any time.</p>
+        <form class="wl-form" id="wlForm" novalidate>
+          <input type="text" id="wlName" placeholder="First name" autocomplete="given-name" aria-label="First name">
+          <input type="email" id="wlEmail" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
+          <button type="submit" id="wlBtn">Join the waitlist</button>
+        </form>
+        <div class="wl-msg" id="wlMsg" role="status"></div>
+        <div class="wl-note">You'll only hear from us about new AAR dates.</div>
       </div>
+      <script>
+      (function(){
+        var KID='RqySRe', LIST='XgEAAe';
+        var f=document.getElementById('wlForm'), em=document.getElementById('wlEmail'), nm=document.getElementById('wlName'), b=document.getElementById('wlBtn'), m=document.getElementById('wlMsg');
+        function msg(t,ok){m.textContent=t;m.className='wl-msg show '+(ok?'ok':'err');}
+        f.addEventListener('submit',function(e){
+          e.preventDefault();
+          if(!/.+@.+\..+/.test(em.value.trim())){msg('Please enter a valid email.',false);return;}
+          b.disabled=true; var old=b.textContent; b.textContent='Adding you...';
+          var payload={data:{type:'subscription',attributes:{profile:{data:{type:'profile',attributes:{
+            email:em.value.trim(), first_name:nm.value.trim(),
+            properties:{course:'Advanced Aesthetic Rehabilitation', waitlist:'New / 2027 dates', lead_source:'Website - AAR waitlist'}
+          }}}},relationships:{list:{data:{type:'list',id:LIST}}}}};
+          fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+encodeURIComponent(KID),{method:'POST',headers:{'Content-Type':'application/json','revision':'2024-10-15'},body:JSON.stringify(payload)})
+          .then(function(r){
+            if(r.ok){f.style.display='none';msg("You're on the list. We'll be in touch when 2027 dates open.",true);}
+            else{b.disabled=false;b.textContent=old;msg('Something went wrong. Please email info@exceptionaldentalacademy.com',false);}
+          })
+          .catch(function(){b.disabled=false;b.textContent=old;msg('Something went wrong. Please email info@exceptionaldentalacademy.com',false);});
+        });
+      })();
+      </script>
     </div>
   </div>
 </section>
@@ -1699,7 +1747,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="final-cta-inner">
     <div class="section-eyebrow" style="justify-content:center;color:var(--gold)">Your next cohort</div>
     <h2>Stop referring out the complex cases. <em>Book a seat.</em></h2>
-    <p>Melbourne, 7-8 November. The final AAR cohort for 2026, and cohorts are kept small.</p>
+    <p>2027 dates are being set now. The waitlist gets them first, and cohorts are kept small.</p>
     <div class="final-cta-ctas">
       <a href="#dates" class="btn-gold">See dates &amp; book <span>→</span></a>
       <a href="index.html#courses" class="btn-ghost">Compare masterclasses</a>
@@ -1745,7 +1793,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="mobile-cta-bar">
   <div class="mcta-info">
     <span class="mcta-label">Next cohort</span>
-    <span class="mcta-text">AAR · <em>Melbourne 7 Nov</em></span>
+    <span class="mcta-text">AAR · <em>2027 waitlist</em></span>
   </div>
   <a href="#dates" class="mcta-button">Book</a>
 </div>
@@ -1777,7 +1825,7 @@ document.addEventListener('DOMContentLoaded',function(){
 /* Eventbrite embedded checkout. Binds each booking link by its element id so
    the widget owns the click. In-app browsers (Instagram, Facebook) cannot run
    the modal, so there the link falls through to Eventbrite in the same tab. */
-(function(){var ev=[{id:'eb-aar-1',eid:'1994279854730',name:'Advanced Aesthetic Rehabilitation Melbourne'}];
+(function(){var ev=[];
 var __inApp=/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent||"");
 if(__inApp){ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.setAttribute("target","_self");try{var u=new URL(el.href);u.searchParams.set("utm_source","meta");u.searchParams.set("utm_medium","paid_social");u.searchParams.set("utm_campaign","inapp_booking");el.href=u.toString();}catch(_){}}});return;}
 function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id,onOrderComplete:function(){if(window.fbq)fbq("track","Purchase",{content_name:e.name,content_ids:[e.eid],content_type:"product"});}});}});}go();})();

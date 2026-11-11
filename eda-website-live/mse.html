@@ -272,18 +272,18 @@ footer a{color:rgba(244,236,220,.75)}
 <section class="dates-band" id="dates" data-screen-label="Dates">
   <div class="wrap-n center">
     <h2>One cohort. <em class="s">One weekend.</em></h2>
-    <p class="lede">Mastering Surgical Extractions runs once in 2026. Booking goes through Eventbrite, and every seat is refundable up to 7 days before the course.</p>
+    <p class="lede">The December 2026 cohort is sold out. Register your interest and we will let you know first when the next date opens.</p>
     <div class="city-cards city-cards-single">
       <div class="city-card">
         <h3>Sydney</h3>
-        <div class="cc-date">4-5 December 2026</div>
+        <div class="cc-date">4-5 December 2026 · <span class="date-soon">Sold out</span></div>
         <div class="cc-meta">
           <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> ACDP, Level 1, 60 Archer St, Chatswood</span>
           <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Fri 4 &amp; Sat 5 December</span>
           <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 9:00am to 5:00pm</span>
           <span><svg viewBox="0 0 24 24"><path d="M12 3v18M7 7h7a3 3 0 0 1 0 6H7"/></svg> A$2,200 + GST</span>
         </div>
-        <a href="https://www.eventbrite.com.au/e/mastering-surgical-extractions-tickets-2001369255318" id="eb-mse-1" target="_blank" class="btn gold">Book your seat</a>
+        <span class="btn gold" style="opacity:.45;cursor:default;pointer-events:none">Sold out</span>
       </div>
     </div>
   </div>
@@ -456,7 +456,7 @@ document.querySelectorAll('.acc-q').forEach(function(btn){
 
 <!-- Eventbrite Embedded Checkout -->
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-<script>(function(){var ev=[{id:'eb-mse-1',eid:'2001369255318',name:'Mastering Surgical Extractions'}];var __inApp=/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent||"");if(__inApp){ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.setAttribute("target","_self");try{var u=new URL(el.href);u.searchParams.set("utm_source","meta");u.searchParams.set("utm_medium","paid_social");u.searchParams.set("utm_campaign","inapp_booking");el.href=u.toString();}catch(_){}}});return;}function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id,onOrderComplete:function(){if(window.fbq)fbq("track","Purchase",{content_name:e.name,content_ids:[e.eid],content_type:"product"});}});}});}go();})();</script>
+<script>(function(){var ev=[];var __inApp=/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent||"");if(__inApp){ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.setAttribute("target","_self");try{var u=new URL(el.href);u.searchParams.set("utm_source","meta");u.searchParams.set("utm_medium","paid_social");u.searchParams.set("utm_campaign","inapp_booking");el.href=u.toString();}catch(_){}}});return;}function go(){if(!window.EBWidgets){return setTimeout(go,200);}ev.forEach(function(e){var el=document.getElementById(e.id);if(el){el.addEventListener("click",function(c){c.preventDefault();});window.EBWidgets.createWidget({widgetType:"checkout",eventId:e.eid,modal:true,modalTriggerElementId:e.id,onOrderComplete:function(){if(window.fbq)fbq("track","Purchase",{content_name:e.name,content_ids:[e.eid],content_type:"product"});}});}});}go();})();</script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="eventbrite.com.au/e/"]');if(a&&window.fbq){fbq('track','InitiateCheckout');}},true);</script>
 <div id="video-lightbox" class="video-lightbox" aria-hidden="true">
   <div class="video-lightbox-inner">
