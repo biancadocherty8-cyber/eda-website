@@ -1272,6 +1272,34 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 @media (min-width:861px){ .nav-burger{display:none} }
 </style>
+
+<style>
+/* ===== compact 2027 waitlist strip ===== */
+.wlt{background:#0B2345;border-top:1px solid rgba(212,174,92,.3);border-bottom:1px solid rgba(212,174,92,.3);padding:0;margin:0}
+.wlt-in{max-width:1100px;margin:0 auto;padding:26px 22px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.wlt-copy{flex:1 1 300px;min-width:0}
+.wlt-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#D4AE5C;margin-bottom:5px}
+.wlt-copy strong{display:block;font-size:17px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.01em}
+.wlt-copy span{display:block;font-size:13.5px;color:rgba(244,236,220,.72);margin-top:4px}
+.wlt-form{flex:1 1 420px;display:flex;gap:9px;flex-wrap:wrap;min-width:0}
+.wlt-form input{flex:1 1 150px;min-width:0;padding:12px 13px;border:1px solid rgba(255,255,255,.2);border-radius:6px;
+  font-family:inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.07)}
+.wlt-form input::placeholder{color:rgba(244,236,220,.55)}
+.wlt-form input:focus{outline:2px solid #D4AE5C;outline-offset:-1px;background:rgba(255,255,255,.11)}
+.wlt-form button{flex:0 0 auto;min-height:46px;background:#D4AE5C;color:#0B2345;font-family:inherit;font-weight:800;
+  font-size:15px;padding:0 22px;border:0;border-radius:6px;cursor:pointer;transition:background .15s}
+.wlt-form button:hover{background:#c39a44}
+.wlt-form button:disabled{opacity:.6;cursor:default}
+.wlt-msg{flex:1 1 100%;font-size:13.5px;font-weight:600;margin-top:2px;display:none}
+.wlt-msg.show{display:block}
+.wlt-msg.ok{color:#9be15d}
+.wlt-msg.err{color:#f3b0b0}
+@media(max-width:720px){
+  .wlt-in{padding:22px 20px;gap:16px}
+  .wlt-form input{flex:1 1 100%}
+  .wlt-form button{flex:1 1 100%;min-height:48px}
+}
+</style>
 </head>
 <body>
 
@@ -1368,6 +1396,51 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="proof-stat"><div class="proof-stat-num">4.9<em>/5</em></div><div class="proof-stat-label">Avg. cohort rating</div></div>
   </div>
 </div>
+
+
+<!-- 2027 WAITLIST, COMPACT -->
+<section class="wlt" aria-label="Join the 2027 waitlist">
+  <div class="wlt-in">
+    <div class="wlt-copy">
+      <div class="wlt-eyebrow">2027 dates</div>
+      <strong>New dates go to the waitlist first.</strong>
+      <span>No spam, unsubscribe any time.</span>
+    </div>
+    <form class="wlt-form" id="wltForm" novalidate>
+      <input type="text"  id="wltName"  placeholder="First name" autocomplete="given-name" aria-label="First name">
+      <input type="email" id="wltEmail" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
+      <button type="submit" id="wltBtn">Join the waitlist</button>
+      <div class="wlt-msg" id="wltMsg" role="status"></div>
+    </form>
+  </div>
+</section>
+<script>
+(function(){
+  var KID='RqySRe', LIST='XgEAAe';
+  var f=document.getElementById('wltForm'), em=document.getElementById('wltEmail'),
+      nm=document.getElementById('wltName'), b=document.getElementById('wltBtn'),
+      m=document.getElementById('wltMsg');
+  if(!f) return;
+  function msg(t,ok){m.textContent=t;m.className='wlt-msg show '+(ok?'ok':'err');}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){msg('Please enter a valid email.',false);return;}
+    b.disabled=true; var old=b.textContent; b.textContent='Adding you...';
+    var payload={data:{type:'subscription',attributes:{profile:{data:{type:'profile',attributes:{
+      email:em.value.trim(), first_name:nm.value.trim(),
+      properties:{course:'Exceptional Porcelain Veneers', waitlist:'New / 2027 dates', lead_source:'Website - EPV waitlist (top)'}
+    }}}},relationships:{list:{data:{type:'list',id:LIST}}}}};
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+encodeURIComponent(KID),
+      {method:'POST',headers:{'Content-Type':'application/json','revision':'2024-10-15'},body:JSON.stringify(payload)})
+    .then(function(r){
+      if(r.ok){f.querySelectorAll('input,button').forEach(function(el){el.style.display='none'});
+               msg("You're on the list. We'll be in touch when 2027 dates open.",true);}
+      else{b.disabled=false;b.textContent=old;msg('Something went wrong. Please email info@exceptionaldentalacademy.com',false);}
+    })
+    .catch(function(){b.disabled=false;b.textContent=old;msg('Something went wrong. Please email info@exceptionaldentalacademy.com',false);});
+  });
+})();
+</script>
 
 <!-- WHO IT'S FOR -->
 <section class="who">
